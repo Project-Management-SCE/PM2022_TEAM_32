@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4C9FF"
+    android:background="#A4D4DA"
     android:gravity="center"
     android:orientation="vertical"
     android:visibility="visible"
@@ -14,16 +14,22 @@
     tools:visibility="visible">
 
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars[4]" />
+
     <TextView
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="40dp"
         android:gravity="center"
         android:text="@string/sign_in"
         android:textColor="#5E35B1"
         android:textSize="34sp"
         android:textStyle="bold|italic"
-        android:layout_margin="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
@@ -81,4 +87,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="invisible" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
