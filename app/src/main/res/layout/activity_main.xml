@@ -1,91 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A4D4DA"
+    android:background="#8874D7FD"
     android:gravity="center"
     android:orientation="vertical"
-    android:visibility="visible"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="-9dp"
-    tools:layout_editor_absoluteY="-1dp"
-    tools:visibility="visible">
+    android:padding="18dp"
+    tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars[4]" />
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/title"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_slab_bold"
+        android:text="@string/title_text"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:gravity="center"
-        android:text="@string/sign_in"
-        android:textColor="#5E35B1"
-        android:textSize="34sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
+        android:layout_height="106dp"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/enteremail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/emailhint2"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintEnd_toEndOf="@id/enteremail"
-        tools:layout_editor_absoluteY="279dp" />
 
-    <EditText
-        android:id="@+id/enterpass"
-        android:layout_width="match_parent"
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/gratefulText"
+        android:layout_width="343dp"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/hint_pass"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/cardview_dark_background"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:text="@string/greateful_text"
+        android:textColor="@color/teal_700"
+        android:textSize="19sp" />
 
     <Button
+        android:id="@+id/startButton"
+        android:layout_width="364dp"
+        android:layout_height="89dp"
+        android:backgroundTint="#CFEDE1"
+        android:text="@string/get_started_text"
+        android:textColor="@color/teal_700" />
 
-        android:id="@+id/btlogin"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:onClick="addemails"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
 
-    <TextView
-        android:id="@+id/emails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible" />
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
