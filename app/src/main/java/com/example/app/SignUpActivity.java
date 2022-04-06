@@ -122,7 +122,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
     }
 
     private void CreateAccountActivity(String email, String password , String username, String profile) {
-        if (!TextUtils.isEmpty(email)  &&!TextUtils.isEmpty(password) && !TextUtils.isEmpty(username)) {
+        if (!TextUtils.isEmpty(email)  &&!TextUtils.isEmpty(password) && !TextUtils.isEmpty(username) && !TextUtils.isEmpty(profile)) {
             progressBar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
