@@ -11,9 +11,15 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/water_drop" />
+
     <TextView
         android:id="@+id/title"
-        android:layout_width="131dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_slab_bold"
         android:text="@string/title_text"
@@ -45,6 +51,7 @@
         android:backgroundTint="#CFEDE1"
         android:text="@string/get_started_text"
         android:textColor="@color/teal_700" />
+
 
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -36,7 +37,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseUser currentUser;
 
-    //connection
+    //connection to DB
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private final CollectionReference collectionReference = db.collection("Users");
 
@@ -44,7 +45,6 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
     private EditText passwordEditText;
     private ProgressBar progressBar;
     private EditText userNameEditText;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +78,38 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
             public void onClick(View view) {
                 if (!TextUtils.isEmpty(emailEditText.getText()) && !TextUtils.isEmpty(passwordEditText.getText().toString()) && !TextUtils.isEmpty(userNameEditText.getText().toString())) {
 
+                    String profile;
                     String email = emailEditText.getText().toString().trim();
                     String password = passwordEditText.getText().toString().trim();
                     String username = userNameEditText.getText().toString().trim();
 
-                    CreateAccountActivity(email, password, username);
+                    //checking user profile
+                    boolean adminChecked = ((CheckBox) findViewById(R.id.checkBox1)).isChecked();
+                    boolean ownerChecked = ((CheckBox) findViewById(R.id.checkBox2)).isChecked();
+                    boolean userChecked = ((CheckBox) findViewById(R.id.checkBox3)).isChecked();
+
+                    //if admin profile
+                    if (adminChecked) {
+                        profile = "admin";
+                        CreateAccountActivity(email, password, username, profile);
+                    }
+                    //if mikveh owner profile
+                    else if (ownerChecked) {
+                        profile = "owner mikveh";
+                        CreateAccountActivity(email, password, username, profile);
+                    }
+                    //if regular user profile
+                    else if (userChecked) {
+                        profile = "user";
+                        CreateAccountActivity(email, password, username, profile);
+                    }
+                    //if no one checkbox has been pressed
+                    else{
+                        Toast.makeText(SignUpActivity.this,
+                                "Must choose profile",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
 
                 } else {
                     Toast.makeText(SignUpActivity.this,
@@ -94,7 +121,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
         });
     }
 
-    private void CreateAccountActivity(String email, String password , String username){
+    private void CreateAccountActivity(String email, String password , String username, String profile) {
         if (!TextUtils.isEmpty(email)  &&!TextUtils.isEmpty(password) && !TextUtils.isEmpty(username)) {
             progressBar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(email,password)
@@ -111,6 +138,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                                 Map<String , String> userObj = new HashMap<>();
                                 userObj.put("userId",currentUserId);
                                 userObj.put("username",username);
+                                userObj.put("profile", profile);
 
                                 // save
                                 collectionReference.add(userObj)

@@ -3,12 +3,15 @@
     <string name="login">Login</string>
     <string name="sign_in">Sign in</string>
     <string name="email_hint">Enter email</string>
-    <string name="title_text">MIKVEH</string>
-    <string name="greateful_text"> Mikveh Finder at home or away, find a mikveah near you and order an appointment </string>
+    <string name="title_text">MIKVEH POINT</string>
+    <string name="greateful_text">Mikveh Finder at home or away, find a mikveh near you and order an appointment easily</string>
     <string name="get_started_text">get started</string>
     <string name="password_hint">Enter password</string>
     <string name="or_text">or</string>
     <string name="create_account">CREATE ACCOUNT</string>
     <string name="username_hint">Username</string>
     <string name="create_text">"CREATE ACCOUNT "</string>
+    <string name="admin_choose">"Admin "</string>
+    <string name="owner_choose">"Mikveh Owner "</string>
+    <string name="user_choose">"User"</string>
 </resources>

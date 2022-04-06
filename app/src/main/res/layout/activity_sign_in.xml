@@ -50,13 +50,13 @@
 
         <Button
             android:id="@+id/email_sign_in_button"
-            android:backgroundTint="#CFEDE1"
-            android:textColor="@color/teal_700"
-            android:layout_marginTop="16dp"
-            android:textStyle="bold"
-            android:text="@string/sign_in"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#CFEDE1"
+            android:text="@string/sign_in"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/or_text"
