@@ -59,6 +59,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
         emailEditText = findViewById(R.id.email_account);
         userNameEditText = findViewById(R.id.username_account);
 
+        //check if user already sign in
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
