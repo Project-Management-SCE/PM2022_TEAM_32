@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8874D7FD"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#8874D7FD"
+    android:padding="20dp"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -63,20 +63,17 @@
         android:id="@+id/checkBox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="admin" />
+        android:text="mikveh owner"
+        android:textAlignment="inherit"
+        android:textSize="16sp" />
 
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="mikveh owner" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="user" />
-
+        android:text="user"
+        android:textAlignment="inherit"
+        android:textSize="16sp" />
 
 
     <Button
@@ -88,6 +85,14 @@
         android:textColor="@color/teal_700"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/sign_in_option"
+        android:layout_width="284dp"
+        android:layout_height="52dp"
+        android:text="Already sign in? Click here!"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="16sp" />
 
 
 </LinearLayout>

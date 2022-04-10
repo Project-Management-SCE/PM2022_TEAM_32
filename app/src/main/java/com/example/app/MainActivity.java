@@ -11,9 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView image;
-    private Button getStartedButton;
-
+     ImageView image;
+     Button getStartedButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +22,10 @@ public class MainActivity extends AppCompatActivity {
         getStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,SignInActivity.class));
-
+                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
 
             }
         });
-
 
     }
 }
