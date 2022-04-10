@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MenuAppActivity extends AppCompatActivity {
+public class UserMenuAppActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_app);
+        setContentView(R.layout.activity_user_menu_app);
     }
 
     public void Logout(View view) {

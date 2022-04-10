@@ -9,7 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
         <activity
-            android:name=".MenuAppActivity"
+            android:name=".OwnerMenuAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserMenuAppActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
