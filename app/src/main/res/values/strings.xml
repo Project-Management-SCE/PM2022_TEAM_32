@@ -14,4 +14,15 @@
     <string name="admin_choose">"Admin "</string>
     <string name="owner_choose">"Mikveh Owner "</string>
     <string name="user_choose">"User"</string>
+
+    <string-array name="cities_array">
+        <item>באר שבע</item>
+        <item>תל אביב</item>
+        <item>חיפה</item>
+        <item>קריית שמונה</item>
+        <item>אילת</item>
+        <item>דימונה</item>
+        <item>אשדוד</item>
+        <item>גבעתיים</item>
+    </string-array>
 </resources>
