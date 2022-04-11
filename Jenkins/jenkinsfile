@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 android {
-                    sdkPackage "build-tools;33.0.1"
+                    sdkPackage "build-tools;33.0.0"
                     sdkPackage "platforms;android-33"
                 }
             }
