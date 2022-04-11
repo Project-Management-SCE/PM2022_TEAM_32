@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 android {
-                    sdkPackage "build-tools;29.0.2"
-                    sdkPackage "platforms;android-29"
+                    sdkPackage "build-tools;33.0.1"
+                    sdkPackage "platforms;android-33"
                     credential 'myapp-keystore', 'keyStorePassword'
                     target 'testDebug lintDebug bundleRelease'
                 }
