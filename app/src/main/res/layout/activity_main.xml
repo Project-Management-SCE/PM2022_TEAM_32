@@ -46,12 +46,11 @@
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="364dp"
-        android:layout_height="89dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:backgroundTint="#CFEDE1"
         android:text="@string/get_started_text"
         android:textColor="@color/teal_700" />
-
 
 
 </LinearLayout>

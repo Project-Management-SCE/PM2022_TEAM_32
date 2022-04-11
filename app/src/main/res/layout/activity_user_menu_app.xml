@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,49 +10,79 @@
     android:padding="34dp"
     tools:context=".UserMenuAppActivity">
 
-
-    <ImageView
-        android:id="@+id/user_menu_icon"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="147dp"
-        app:srcCompat="@drawable/user" />
-
-    <TextView
-        android:id="@+id/user_menu_header"
-        android:layout_width="wrap_content"
-        android:layout_height="59dp"
-        android:layout_marginTop="250dp"
-        android:fontFamily="serif-monospace"
-        android:paddingTop="12dp"
-        android:text="Welcome!"
-        android:textAlignment="center"
-        android:textColor="#B3CCC2"
-        android:textSize="34sp" />
-
-    <TextView
-        android:id="@+id/text_user_menu"
-        android:layout_width="399dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif-monospace"
-        android:paddingTop="30px"
-        android:text="Please select Mikveh location"
-        android:textAlignment="center"
-        android:textColor="#829890"
-        android:textSize="16sp" />
-
-    <Spinner
-        android:id="@+id/city_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:textAlignment="center" />
-
-    <Button
-        android:id="@+id/select_button"
-        android:layout_width="235dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#CFEDE1"
-        android:text="Select"
-        android:textColor="@color/teal_700" />
+        android:layout_height="700dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/user_profile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:backgroundTint="#CFEDE1"
+            android:text="@string/my_profile"
+            android:textColor="#cf9fa6" />
+
+        <Button
+            android:id="@+id/user_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:backgroundTint="#CFEDE1"
+            android:text="@string/logout"
+            android:textColor="#cf9fa6" />
+
+        <TextView
+            android:id="@+id/user_menu_header"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="250dp"
+            android:fontFamily="serif-monospace"
+            android:text="@string/welcome"
+            android:textAlignment="center"
+            android:textColor="#B3CCC2"
+            android:textSize="34sp" />
+
+
+        <TextView
+            android:id="@+id/text_user_menu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:fontFamily="serif-monospace"
+            android:text="@string/please_select_mikveh_location"
+            android:textAlignment="center"
+            android:textColor="#829890"
+            android:textSize="19sp" />
+
+        <Spinner
+            android:id="@+id/city_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="44dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <Button
+            android:id="@+id/select_button"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#CFEDE1"
+            android:text="@string/select"
+            android:textAlignment="center"
+            android:textColor="@color/teal_700" />
+
+        <ImageView
+            android:id="@+id/user_flower_image"
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:layout_gravity="center"
+            android:layout_margin="30sp"
+            app:srcCompat="@drawable/flower" />
+    </LinearLayout>
+</FrameLayout>
