@@ -41,7 +41,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+       // spinner.setOnItemSelectedListener(this);
 
         my_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +63,10 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View view) {
                 //after user select some city for mikveh location
+
+                String userCityChoice = spinner.getSelectedItem().toString();//saving user choice
+
+                //Toast.makeText(UserMenuAppActivity.this, "Chosen city: " + userCityChoice , Toast.LENGTH_SHORT).show();//printing user choice
             }
         });
     }

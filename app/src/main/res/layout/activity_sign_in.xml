@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    android:background="#8874D7FD"
+    android:background="#a7dcd4"
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
@@ -19,10 +19,11 @@
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+        android:id="@+id/locker"
+        android:layout_width="194dp"
+        android:layout_height="169dp"
+        app:srcCompat="@drawable/locker" />
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -87,6 +88,7 @@
         android:textAlignment="center"
         android:textColor="#009688"
         android:textSize="16sp" />
+
 
 
 </LinearLayout>

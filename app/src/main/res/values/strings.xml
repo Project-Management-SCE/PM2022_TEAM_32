@@ -10,7 +10,7 @@
     <string name="or_text">or</string>
     <string name="create_account">CREATE ACCOUNT</string>
     <string name="username_hint">Username</string>
-    <string name="create_text">"CREATE ACCOUNT "</string>
+    <string name="create_text">CREATE ACCOUNT</string>
     <string name="admin_choose">"Admin "</string>
     <string name="owner_choose">"Mikveh Owner "</string>
     <string name="user_choose">"User"</string>
@@ -19,6 +19,9 @@
     <string name="select">Select</string>
     <string name="my_profile">My Profile</string>
     <string name="logout">Logout</string>
+    <string name="mikveh_owner">Mikveh Owner</string>
+    <string name="user">User</string>
+    <string name="already_sign_in_click_here">Already sign in? Click here!</string>
 
     <string-array name="cities_array">
         <item>"אבן יהודה"</item>

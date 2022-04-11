@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8874D7FD"
+    android:background="#a7dcd4"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="18dp"
@@ -13,7 +13,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/water_drop" />
 
@@ -21,8 +21,9 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_slab_bold"
+        android:fontFamily="serif-monospace"
         android:text="@string/title_text"
+        android:textColor="#c6969e"
         android:textSize="30sp" />
 
     <RelativeLayout
