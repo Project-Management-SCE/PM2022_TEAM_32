@@ -6,8 +6,6 @@ pipeline {
                 android {
                     sdkPackage "build-tools;33.0.1"
                     sdkPackage "platforms;android-33"
-                    credential 'myapp-keystore', 'keyStorePassword'
-                    target 'testDebug lintDebug bundleRelease'
                 }
             }
         }
