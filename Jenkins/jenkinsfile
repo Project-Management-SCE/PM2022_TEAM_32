@@ -4,13 +4,6 @@ pipeline {
     // Run on a build agent where we have the Android SDK installed
     label 'android'
   }
-   stages {
-        stage('Start Build') {
-            steps {
-                bitbucketStatusNotify(buildState: 'INPROGRESS')
-            }
-        }
-  
    stage('Build App') {
             steps {
                 // Clean and assemble APKs
@@ -23,7 +16,7 @@ pipeline {
                 }
             }
         }
-       }
+   
 
 
   post {
