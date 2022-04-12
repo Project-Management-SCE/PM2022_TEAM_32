@@ -1,26 +1,18 @@
 pipeline {
-    agent none    
+    agent any
     stages {
-      stage('Build App') {
-            steps {
-                // Clean and assemble APKs
-                sh './gradlew clean assembleDebug assembleRelease'
-
-                script {
-                    if (env.BRANCH_NAME.startsWith("release")) {
-                        sh './gradlew bundleUpload'
-                    }
+        stage('Build') {
+            agent {
+                docker {
+                    image 'gradle:7.2-jdk18'
+                    // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
+                    reuseNode true
                 }
             }
-        }
-    
-    
-   
-            post {
-                always {
-                    junit 'test-reports/results.xml'
-                }
+            steps {
+                sh 'gradle --version'
             }
         }
     }
+}
 
