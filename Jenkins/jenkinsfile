@@ -1,5 +1,12 @@
 pipeline {
     stages {
+        stage('Log the Jenkins Docker Ant Git and Java version info') {
+            steps {
+                sh 'ant -version'
+	            sh 'java -version'
+	            sh 'git --version'
+             }
+        }   
         stage('Build') {
             agent {
                 docker {
