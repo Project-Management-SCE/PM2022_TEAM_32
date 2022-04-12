@@ -1,13 +1,25 @@
-Jenkinsfile
-pipeline {
-  agent {
-    // Run on a build agent where we have the Android SDK installed
-    label 'android'
-  }
-  post {
-    failure {
-      // Notify developer team of the failure
-      mail to: 'android-devs@example.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
+pipeline { 
+
+    environment { 
+
+        registry = "YourDockerhubAccount/YourRepository" 
+
+        registryCredential = 'dockerhub_id' 
+
+        dockerImage = '' 
+
     }
-  }
-}
+
+    agent any 
+
+    stages { 
+
+        stage('Cloning our Git') { 
+
+            steps { 
+
+                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
+
+            }
+
+        }
