@@ -1,26 +1,19 @@
-Jenkinsfile
 pipeline {
-  agent {
-    // Run on a build agent where we have the Android SDK installed
-    label 'android'
-  }
-   stage('Build App') {
-            steps {
-                // Clean and assemble APKs
-                sh './gradlew clean assembleDebug assembleRelease'
-
-                script {
-                    if (env.BRANCH_NAME.startsWith("release")) {
-                        sh './gradlew bundleUpload'
-                    }
+    stages { 
+        stage('Build') {
+            agent {
+                docker {
+                    image 'gradle:7.1.3-jdk18'
+                    reuseNode true            
                 }
             }
         }
-   
-  post {
-    failure {
-      // Notify developer team of the failure
-      mail to: 'android-devs@example.com', subject: 'Oops!', body: "Build ${env.BUILD_NUMBER} failed; ${env.BUILD_URL}"
-    }
-  }
+	    
+	 stage('Log the Jenkins Docker Ant Git and Java version info') {
+            steps {
+	    	sh 'java -version'
+	    	sh 'git --version'
+             }
+	}
 }
+    	   
