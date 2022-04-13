@@ -450,5 +450,6 @@
     <string name="menu">Menu</string>
     <string name="manage_app_users">Manage App Users</string>
     <string name="upcoming_appoitments">Upcoming appoitments</string>
+    <string name="settings">Settings</string>
 
 </resources>

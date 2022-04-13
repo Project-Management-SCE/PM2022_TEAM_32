@@ -111,11 +111,14 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                                 Map<String, Object> user = new HashMap<>();
                                 user.put("userName", username);
                                 user.put("email", email);
-                                if(ownerChecked){
+                                if(userChecked){
                                     profile = "User";
                                 }
-                                else{
+                                else if(ownerChecked){
                                     profile = "Mikveh owner";
+                                }
+                                else{
+                                    profile = "Admin";
                                 }
                                 user.put("profile", profile);
 

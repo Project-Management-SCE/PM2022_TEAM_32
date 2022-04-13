@@ -30,14 +30,14 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_menu_app);
 
-        user_menu_header = findViewById(R.id.owner_menu_header);
+        user_menu_header = findViewById(R.id.admin_menu_header);
         textView_user_menu = findViewById(R.id.text_user_menu);
         user_flower_image = findViewById(R.id.user_flower_image);
         spinner = findViewById(R.id.city_spinner);
         select_city_button = findViewById(R.id.select_button);
 
         //user menu has been clicked
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tollbarTitle = findViewById(R.id.toolbar_title);
         setSupportActionBar(toolbar);
 
@@ -70,17 +70,17 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.item1:
+            case R.id.user_profile:
                 //user profile
 
 
                 return true;
-            case R.id.item2:
+            case R.id.user_appo:
                 //user appointments
 
 
                 return true;
-            case R.id.item3:
+            case R.id.user_logoff:
                 FirebaseAuth.getInstance().signOut();//logout
                 startActivity(new Intent(getApplicationContext(),SignInActivity.class));
                 finish();
