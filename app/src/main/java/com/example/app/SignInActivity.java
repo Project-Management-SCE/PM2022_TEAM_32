@@ -22,8 +22,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignInActivity extends AppCompatActivity {
     Button LoginButn, creatButn;
@@ -31,6 +37,9 @@ public class SignInActivity extends AppCompatActivity {
     TextView forgotPassword;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID, profile;
+
 
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
@@ -44,6 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         forgotPassword = findViewById(R.id.forgot_password_link);
         progressBar = findViewById(R.id.login_progress);
         fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         LoginButn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +79,9 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                                 Toast.makeText(SignInActivity.this, "User Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                 startActivity(new Intent(getApplicationContext(), AdminMenuAppActivity.class));
+                                Toast.makeText(SignInActivity.this, "User Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), UserMenuAppActivity.class));
+
                         } else {
                             Toast.makeText(SignInActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
