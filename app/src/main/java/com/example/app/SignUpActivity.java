@@ -83,86 +83,65 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                 boolean ownerChecked = ((CheckBox) findViewById(R.id.checkBox1)).isChecked();
                 boolean userChecked = ((CheckBox) findViewById(R.id.checkBox2)).isChecked();
 
-                //TODO: check empty fields
-//                if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
-//
-//                }
-//
-//
-//                //check no empty fields
-//                if(TextUtils.isEmpty(username)){
-//                    Toast.makeText(SignUpActivity.this, "Must choose user name", Toast.LENGTH_LONG).show();
-//                }
-//
-//                else if(TextUtils.isEmpty(email)){
-//                    Toast.makeText(SignUpActivity.this, "Must choose email", Toast.LENGTH_LONG).show();
-//                }
-//
-//                else if(TextUtils.isEmpty(password)){
-//                    Toast.makeText(SignUpActivity.this, "Must choose password", Toast.LENGTH_LONG).show();
-//                }
-//
-//                else if(userChecked){
-//                    profile = "user";
-//                }
-//                else if(ownerChecked){
-//                    profile = "mikveh owner";
-//                }
-//                else{
-//                    Toast.makeText(SignUpActivity.this,
-//                            "Must choose profile",
-//                            Toast.LENGTH_LONG)
-//                            .show();
-//                }
+                if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
-                progressBar.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
+                    fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
 
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                                // send verification link
+                                FirebaseUser fuser = fAuth.getCurrentUser();
+                                fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(SignUpActivity.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
+                                    }
+                                });
 
-                            // send verification link
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(SignUpActivity.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
+                                userID = fAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = fStore.collection("Users").document(userID);
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("userName", username);
+                                user.put("email", email);
+                                if(ownerChecked){
+                                    profile = "User";
                                 }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
+                                else{
+                                    profile = "Mikveh owner";
                                 }
-                            });
+                                user.put("profile", profile);
 
-                            Toast.makeText(SignUpActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            userID = fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fStore.collection("Users").document(userID);
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("userName",username);
-                            user.put("email",email);
-                            user.put("profile",profile);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "onSuccess: user Profile is created for " + userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "onFailure: " + e.toString());
+                                    }
+                                });
+                                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
 
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: " + e.toString());
-                                }
-                            });
-                            startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-
-                        }else {
-                            Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
+                            } else {
+                                Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
                         }
-                    }
-                });
+                    });
+                }
+                else {
+                    Toast.makeText(SignUpActivity.this, "All fields required!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
