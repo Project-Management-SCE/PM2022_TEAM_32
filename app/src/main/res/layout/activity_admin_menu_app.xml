@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".OwnerMenuAppActivity">
+    tools:context=".AdminMenuAppActivity">
 
 
     <LinearLayout
@@ -17,10 +17,17 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/owner_toolbar_main"
+            layout="@layout/admin_toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:layout_gravity="left"/>
+            android:layout_gravity="left" />
+
+        <ImageView
+            android:id="@+id/admin_icon"
+            android:layout_width="187dp"
+            android:layout_height="146dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/admin" />
 
         <TextView
             android:id="@+id/admin_menu_header"
@@ -33,27 +40,6 @@
             android:textAlignment="center"
             android:textColor="#87666b"
             android:textSize="34sp" />
-
-        <TextView
-            android:id="@+id/owner_menu_text"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:fontFamily="serif-monospace"
-            android:text="@string/upcoming_appoitments"
-            android:textAlignment="center"
-            android:textColor="#87666b"
-            android:textSize="25dp">
-
-        </TextView>
-
-        <CalendarView
-            android:id="@+id/owner_calendar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true">
-
-        </CalendarView>
-
 
     </LinearLayout>
 

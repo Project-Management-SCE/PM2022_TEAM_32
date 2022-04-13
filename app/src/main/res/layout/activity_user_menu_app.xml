@@ -1,52 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#a7dcd4"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="34dp"
+    android:fitsSystemWindows="true"
     tools:context=".UserMenuAppActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="720dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
 
-
-        <Button
-            android:id="@+id/user_profile_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:backgroundTint="#d9dca7"
-            android:text="@string/my_profile"
-            android:textColor="#322628" />
-
-        <Button
-            android:id="@+id/user_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:backgroundTint="#d9dca7"
-            android:text="@string/logout"
-            android:textColor="#322628" />
-
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/user_toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="left"/>
 
         <ImageView
             android:id="@+id/user_flower_image"
             android:layout_width="206dp"
-            android:layout_height="126dp"
+            android:layout_height="217dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/flower" />
+            app:srcCompat="@drawable/flower"
+            tools:ignore="ImageContrastCheck" />
+
 
         <TextView
-            android:id="@+id/user_menu_header"
+            android:id="@+id/admin_menu_header"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:layout_gravity="center"
             android:layout_marginTop="250dp"
             android:fontFamily="serif-monospace"
@@ -58,18 +46,18 @@
         <TextView
             android:id="@+id/text_user_menu"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="serif-monospace"
             android:text="@string/please_select_mikveh_location"
             android:textAlignment="center"
             android:textColor="#87666b"
-            android:textSize="19sp" />
+            android:textSize="25sp" />
 
         <Spinner
             android:id="@+id/city_spinner"
             android:layout_width="match_parent"
-            android:layout_height="34dp"
+            android:layout_height="35dp"
             android:layout_marginTop="44dp"
             android:gravity="center"
             android:theme="@style/CustomSpinnerTheme"
@@ -87,4 +75,7 @@
             android:textColor="#e4f2eb" />
 
     </LinearLayout>
-</FrameLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
