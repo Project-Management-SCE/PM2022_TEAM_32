@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -24,6 +25,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     ImageView user_flower_image;
     Spinner spinner;
     Button select_city_button;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         user_flower_image = findViewById(R.id.user_flower_image);
         spinner = findViewById(R.id.city_spinner);
         select_city_button = findViewById(R.id.select_button);
+        fAuth = FirebaseAuth.getInstance();
 
         //user menu has been clicked
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -60,6 +63,21 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         });
     }
 
+//    public void  getUserProfile() {
+//
+//
+//    }
+//
+//    public void userAppo(){
+//
+//    }
+
+    public void UserLogout() {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+        finish();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -73,17 +91,13 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
             case R.id.user_profile:
                 //user profile
 
-
                 return true;
             case R.id.user_appo:
                 //user appointments
 
-
                 return true;
             case R.id.user_logoff:
-                FirebaseAuth.getInstance().signOut();//logout
-                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-                finish();
+                UserLogout();//logoff
             default:
                 return super.onOptionsItemSelected(item);
         }
