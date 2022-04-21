@@ -451,5 +451,11 @@
     <string name="manage_app_users">Manage App Users</string>
     <string name="upcoming_appoitments">Upcoming appoitments</string>
     <string name="settings">Settings</string>
+    <string name="user_name">User name:</string>
+    <string name="profile_type">Profile type:</string>
+    <string name="email">Email:</string>
+    <string name="save">Save</string>
+    <string name="phone">Phone</string>
+    <string name="your_email_address">Your Email Address</string>
 
 </resources>

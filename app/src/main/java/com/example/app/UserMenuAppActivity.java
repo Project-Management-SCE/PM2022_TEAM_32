@@ -12,13 +12,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView user_menu_header, textView_user_menu, tollbarTitle;
@@ -63,20 +62,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         });
     }
 
-//    public void  getUserProfile() {
-//
-//
-//    }
-//
-//    public void userAppo(){
-//
-//    }
-
-    public void UserLogout() {
-        FirebaseAuth.getInstance().signOut();//logout
-        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-        finish();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,23 +69,34 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         getMenuInflater().inflate(R.menu.user_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.user_profile:
-                //user profile
+        if (item.getItemId() == R.id.item1)
+            userData();
+//        else if (item.getItemId() == R.id.item2)
+//            userAppo(item);
+        else
+            logout();
 
-                return true;
-            case R.id.user_appo:
-                //user appointments
+        return super.onOptionsItemSelected(item);
+    }
 
-                return true;
-            case R.id.user_logoff:
-                UserLogout();//logoff
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    public void userData() {
+        startActivity(new Intent(UserMenuAppActivity.this,UserEditProfile.class));
+//        Intent intent = new Intent(this, UserEditProfile.class);
+//        startActivity(intent);
+    }
+
+//    public void userAppo(MenuItem item) {
+//        //create user appoitements function
+//    }
+
+    public void logout() {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+        finish();
     }
 
     @Override

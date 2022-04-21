@@ -122,17 +122,17 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                                 }
                                 user.put("profile", profile);
 
-                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.d(TAG, "onSuccess: user Profile is created for " + userID);
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.d(TAG, "onFailure: " + e.toString());
-                                    }
-                                });
+//                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                    @Override
+//                                    public void onSuccess(Void aVoid) {
+//                                        Log.d(TAG, "onSuccess: user Profile is created for " + userID);
+//                                    }
+//                                }).addOnFailureListener(new OnFailureListener() {
+//                                    @Override
+//                                    public void onFailure(@NonNull Exception e) {
+//                                        Log.d(TAG, "onFailure: " + e.toString());
+//                                    }
+//                                });
                                 startActivity(new Intent(getApplicationContext(), SignInActivity.class));
 
                             } else {
