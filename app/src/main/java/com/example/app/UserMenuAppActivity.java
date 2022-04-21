@@ -2,6 +2,7 @@ package com.example.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -73,14 +74,19 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        if (item.getItemId() == R.id.item1)
-            userData();
-//        else if (item.getItemId() == R.id.item2)
-//            userAppo(item);
-        else
-            logout();
-
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.item1:
+                userData();
+                return true;
+//            case R.id.item2:
+//                showHelp();
+//                return true;
+            case R.id.item3:
+                logout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void userData() {
