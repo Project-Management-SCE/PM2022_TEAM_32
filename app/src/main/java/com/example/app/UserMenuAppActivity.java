@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView user_menu_header, textView_user_menu, tollbarTitle;
-    ImageView user_flower_image;
     Spinner spinner;
     Button select_city_button;
     FirebaseAuth fAuth;
@@ -33,7 +32,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
 
         user_menu_header = findViewById(R.id.admin_menu_header);
         textView_user_menu = findViewById(R.id.text_user_menu);
-        user_flower_image = findViewById(R.id.user_flower_image);
         spinner = findViewById(R.id.city_spinner);
         select_city_button = findViewById(R.id.select_button);
         fAuth = FirebaseAuth.getInstance();

@@ -34,9 +34,9 @@ public class UserProfile extends AppCompatActivity {
     public static final String TAG = "TAG";
 
     ImageView user_image, mail_image;
-    TextView usernameTXT, emailTXT, usernameVIEW, emailVIEW;
+    TextView usernameTXT, emailTXT, profileTXT, usernameVIEW, emailVIEW, profileVIEW;
     Button editProfile, resetPassword, goBack, logout;
-    String username, email, userID;
+    String userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
 
@@ -45,12 +45,15 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
 
+
         user_image = findViewById(R.id.user_image);
         mail_image = findViewById(R.id.mail_image);
         usernameTXT = findViewById(R.id.username_txt);
         emailTXT = findViewById(R.id.useremail_txt);
+        profileTXT = findViewById(R.id.profile_txt);
         usernameVIEW = findViewById(R.id.username_view);
         emailVIEW = findViewById(R.id.useremail_view);
+        profileVIEW = findViewById(R.id.profile_view);
         editProfile = findViewById(R.id.edit_button);
         resetPassword = findViewById(R.id.resetPassword_button);
         goBack = findViewById(R.id.goback_button);
@@ -66,12 +69,21 @@ public class UserProfile extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 usernameVIEW.setText(documentSnapshot.getString("userName"));
                 emailVIEW.setText(documentSnapshot.getString("email"));
-
+                profileVIEW.setText(documentSnapshot.getString("profile"));
             }
         });
 
 
         //edit profile button
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(UserProfile.this, UserEditProfile.class);
+                i.putExtra("userName", usernameVIEW.getText().toString());
+                i.putExtra("email", emailVIEW.getText().toString());
+                startActivity(i);
+            }
+        });
 
         //reset password button
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -131,26 +143,26 @@ public class UserProfile extends AppCompatActivity {
         });
     }
 
-    private void showUserProfile(FirebaseUser firebaseUser) {
-        String userID = firebaseUser.getUid();
-        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Users");
-        referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                username = snapshot.child("userName").getValue().toString();
-                email = snapshot.child("email").getValue().toString();
-
-                usernameVIEW.setText(username);
-                emailVIEW.setText(email);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
+//    private void showUserProfile(FirebaseUser firebaseUser) {
+//        String userID = firebaseUser.getUid();
+//        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Users");
+//        referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                username = snapshot.child("userName").getValue().toString();
+//                email = snapshot.child("email").getValue().toString();
+//
+//                usernameVIEW.setText(username);
+//                emailVIEW.setText(email);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//
+//    }
 
 }
 
