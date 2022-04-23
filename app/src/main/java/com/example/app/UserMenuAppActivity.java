@@ -2,7 +2,6 @@ package com.example.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.UserData;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -90,7 +89,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     }
 
     public void userData() {
-        startActivity(new Intent(UserMenuAppActivity.this,UserEditProfile.class));
+        startActivity(new Intent(UserMenuAppActivity.this, UserProfile.class));
 //        Intent intent = new Intent(this, UserEditProfile.class);
 //        startActivity(intent);
     }

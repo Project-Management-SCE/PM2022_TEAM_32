@@ -21,7 +21,7 @@
             android:name=".SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".UserEditProfile"
+            android:name=".UserProfile"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

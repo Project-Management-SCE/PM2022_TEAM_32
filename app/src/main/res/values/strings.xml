@@ -457,5 +457,7 @@
     <string name="save">Save</string>
     <string name="phone">Phone</string>
     <string name="your_email_address">Your Email Address</string>
+    <string name="user_name_txt">User Name</string>
+    <string name="email_txt">Email</string>
 
 </resources>

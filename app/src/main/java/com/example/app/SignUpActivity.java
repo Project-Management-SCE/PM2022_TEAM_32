@@ -70,11 +70,7 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
         signInButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (fAuth.getCurrentUser() != null)
-                {
                     startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
-                    finish();
-                }
             }
         }));
 
