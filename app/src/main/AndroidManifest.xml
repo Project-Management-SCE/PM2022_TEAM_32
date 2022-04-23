@@ -15,6 +15,15 @@
             android:name=".UserMenuAppActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminMenuAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProfile"
+            android:exported="false" />
+        <activity
+            android:name=".AdminEditProfile"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity

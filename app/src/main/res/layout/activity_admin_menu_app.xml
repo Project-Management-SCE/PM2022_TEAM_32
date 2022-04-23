@@ -22,13 +22,6 @@
             android:layout_height="44dp"
             android:layout_gravity="left" />
 
-        <ImageView
-            android:id="@+id/admin_icon"
-            android:layout_width="187dp"
-            android:layout_height="146dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/admin" />
-
         <TextView
             android:id="@+id/admin_menu_header"
             android:layout_width="match_parent"

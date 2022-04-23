@@ -88,8 +88,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
 
     public void userData() {
         startActivity(new Intent(UserMenuAppActivity.this, UserProfile.class));
-//        Intent intent = new Intent(this, UserEditProfile.class);
-//        startActivity(intent);
     }
 
 //    public void userAppo(MenuItem item) {

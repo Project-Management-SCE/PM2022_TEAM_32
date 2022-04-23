@@ -3,6 +3,7 @@ package com.example.app;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,74 +19,66 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class UserProfile extends AppCompatActivity {
+public class AdminProfile extends AppCompatActivity {
     public static final String TAG = "TAG";
 
-    ImageView user_image, mail_image;
-    TextView usernameTXT, emailTXT, profileTXT, usernameVIEW, emailVIEW, profileVIEW;
+    ImageView adminImage, emailIcon;
+    TextView admUsernameTXT, admUsernameVIEW, admEmailTXT, admEmailVIEW, admProfileTXT, admProfileVIEW;
     Button editProfile, resetPassword, goBack, logout;
-    String userID;
+    String adminID;
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_profile);
+        setContentView(R.layout.admin_profile);
 
-
-        user_image = findViewById(R.id.user_image);
-        mail_image = findViewById(R.id.mail_image);
-        usernameTXT = findViewById(R.id.username_txt);
-        emailTXT = findViewById(R.id.useremail_txt);
-        profileTXT = findViewById(R.id.profile_txt);
-        usernameVIEW = findViewById(R.id.username_view);
-        emailVIEW = findViewById(R.id.useremail_view);
-        profileVIEW = findViewById(R.id.profile_view);
-        editProfile = findViewById(R.id.edit_button);
+        adminImage = findViewById(R.id.admin_image);
+        emailIcon = findViewById(R.id.mail_image);
+        admUsernameTXT = findViewById(R.id.admin_username_txt);
+        admUsernameVIEW = findViewById(R.id.admin_username_view);
+        admEmailTXT = findViewById(R.id.admin_email_txt);
+        admEmailVIEW = findViewById(R.id.admin_email_view);
+        admProfileTXT = findViewById(R.id.profile_txt);
+        admProfileVIEW = findViewById(R.id.profile_view);
+        editProfile = findViewById(R.id.adm_edit_button);
         resetPassword = findViewById(R.id.resetPassword_button);
         goBack = findViewById(R.id.goback_button);
         logout = findViewById(R.id.logout_button);
 
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        userID = fAuth.getCurrentUser().getUid();
+        adminID = fAuth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = fstore.collection("Users").document(userID);
+        DocumentReference documentReference = fstore.collection("Users").document(adminID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                usernameVIEW.setText(documentSnapshot.getString("userName"));
-                emailVIEW.setText(documentSnapshot.getString("email"));
-                profileVIEW.setText(documentSnapshot.getString("profile"));
+                admUsernameVIEW.setText(documentSnapshot.getString("userName"));
+                admEmailVIEW.setText(documentSnapshot.getString("email"));
+                admProfileVIEW.setText(documentSnapshot.getString("profile"));
             }
         });
 
+          //Edit profile button
+//        editProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
+//                i.putExtra("userName", admUsernameVIEW.getText().toString());
+//                i.putExtra("email", admEmailVIEW.getText().toString());
+//                startActivity(i);
+//            }
+//        });
 
-        //edit profile button
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(UserProfile.this, UserEditProfile.class);
-                i.putExtra("userName", usernameVIEW.getText().toString());
-                i.putExtra("email", emailVIEW.getText().toString());
-                startActivity(i);
-            }
-        });
-
-        //reset password button
+        //Reset password button
         resetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,12 +97,12 @@ public class UserProfile extends AppCompatActivity {
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(UserProfile.this, "Reset Link Sent To Your Email.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AdminProfile.this, "Reset Link Sent To Your Email.", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(UserProfile.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AdminProfile.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -125,14 +118,15 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
-
+        //Go back button
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),UserMenuAppActivity.class));
+                startActivity(new Intent(AdminProfile.this, AdminMenuAppActivity.class));
             }
         });
 
+        //Logout button
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +135,8 @@ public class UserProfile extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 
-}
 
+}
