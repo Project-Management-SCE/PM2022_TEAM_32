@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
+        android:layout_marginTop="45dp"
         android:text="@string/title_text"
         android:textColor="#c6969e"
         android:textSize="30sp" />

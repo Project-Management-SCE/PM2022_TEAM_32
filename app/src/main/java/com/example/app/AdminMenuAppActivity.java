@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class AdminMenuAppActivity extends AppCompatActivity {
 
     TextView admin_menu_header, tollbarTitle;
-    ImageView admIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,6 @@ public class AdminMenuAppActivity extends AppCompatActivity {
 
         admin_menu_header = findViewById(R.id.admin_menu_header);
         tollbarTitle = findViewById(R.id.toolbar_title);
-        admIcon = findViewById(R.id.admin_icon);
 
         //admin menu has been clicked
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -43,25 +41,32 @@ public class AdminMenuAppActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.adm_profile:
-                //admin profile
-
-
+                adminData();
                 return true;
-            case R.id.adm_manage:
-                //manage app users
 
+//            case R.id.adm_manage:
+//                //manage app users
+//                return true;
+//            case R.id.adm_settings:
+//                //settings
+//                return true;
 
-                return true;
-            case R.id.adm_settings:
-                //settings
-
-                return true;
             case R.id.adm_logoff:
-                FirebaseAuth.getInstance().signOut();//logout
-                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-                finish();
+                logout();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void adminData() {
+        startActivity(new Intent(AdminMenuAppActivity.this, AdminProfile.class));
+    }
+
+    public void logout() {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+        finish();
     }
 }
