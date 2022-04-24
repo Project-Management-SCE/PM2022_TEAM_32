@@ -80,7 +80,7 @@ public class SignInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                                 Toast.makeText(SignInActivity.this, "User Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), AdminMenuAppActivity.class));
+                                startActivity(new Intent(getApplicationContext(), UserMenuAppActivity.class));
 
                         } else {
                             Toast.makeText(SignInActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
