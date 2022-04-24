@@ -37,7 +37,7 @@ public class UserEditProfile extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_user_profile);
+        setContentView(R.layout.edit_user_profile);//connect
 
         profileUserName = findViewById(R.id.profileFullName);
         profileEmail = findViewById(R.id.profileEmailAddress);
