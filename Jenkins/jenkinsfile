@@ -1,7 +1,8 @@
 pipeline {
 agent {
 	docker {
-        image 'openjdk:18-alpine'
+        image 'androidsdk/android-32:latest
+'
          reuseNode true            
           }
 	 }
