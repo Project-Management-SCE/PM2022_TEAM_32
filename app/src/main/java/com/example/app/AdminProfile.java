@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,16 +68,15 @@ public class AdminProfile extends AppCompatActivity {
             }
         });
 
-          //Edit profile button
-//        editProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
-//                i.putExtra("userName", admUsernameVIEW.getText().toString());
-//                i.putExtra("email", admEmailVIEW.getText().toString());
-//                startActivity(i);
-//            }
-//        });
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
+                i.putExtra("userName", admUsernameVIEW.getText().toString());
+                i.putExtra("email", admEmailVIEW.getText().toString());
+                startActivity(i);
+            }
+        });
 
         //Reset password button
         resetPassword.setOnClickListener(new View.OnClickListener() {
