@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -30,9 +31,11 @@ public class AdminManageAppUsers extends AppCompatActivity {
 
     ListView usersList;
     ScrollView sv;
+    Button usersButton, ownersButton;
     FloatingActionButton goback;
     ArrayList<UsersDataModel> dataModalArrayList;
     FirebaseFirestore db;
+    String choice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class AdminManageAppUsers extends AppCompatActivity {
         // below line is use to initialize our variables
         usersList = findViewById(R.id.usersList);
         sv = findViewById(R.id.scroll_view);
+        usersButton = findViewById(R.id.users_button);
+        ownersButton = findViewById(R.id.owners_button);
         goback = findViewById(R.id.floatingActionButton);
         dataModalArrayList = new ArrayList<>();
 
@@ -57,10 +62,27 @@ public class AdminManageAppUsers extends AppCompatActivity {
 
         // here we are calling a method
         // to load data in our list view.
-        loadDatainListview();
+        usersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choice = "Users";
+                loadDatainListview(choice);
+            }
+        });
+
+        ownersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choice = "Owner";
+                loadDatainListview(choice);
+            }
+        });
     }
 
-    private void loadDatainListview() {
+    private void loadDatainListview(String choice) {
+        usersButton.setVisibility(View.GONE);
+        ownersButton.setVisibility(View.GONE);
+        usersList.setVisibility(View.VISIBLE);
         db.collection("Users").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
