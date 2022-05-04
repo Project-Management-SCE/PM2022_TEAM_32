@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bckground"
     tools:context=".AdminProfile" >
 
     <LinearLayout
@@ -17,8 +18,8 @@
 
         <ImageView
             android:id="@+id/admin_image"
-            android:layout_width="207dp"
-            android:layout_height="221dp"
+            android:layout_width="180dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/admin" />
 

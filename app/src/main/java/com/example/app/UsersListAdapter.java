@@ -49,8 +49,7 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
         profile.setText(dataModal.getProfile());
         email.setText(dataModal.getEmail());
 
-        // below line is use to add item click listener
-        // for our item of list view.
+
         listitemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -52,6 +53,7 @@ public class AdminManageAppUsers extends AppCompatActivity {
                 startActivity(new Intent(AdminManageAppUsers.this, AdminMenuAppActivity.class));
             }
         });
+
 
         // here we are calling a method
         // to load data in our list view.
