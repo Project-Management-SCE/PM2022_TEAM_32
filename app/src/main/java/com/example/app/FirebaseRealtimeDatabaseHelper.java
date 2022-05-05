@@ -36,27 +36,6 @@ public class FirebaseRealtimeDatabaseHelper {
         mReference = mDatabase.getReference();
     }
 
-    public void readMikvehByOwner(final DataStatus status) {
-        String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        mReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mikvot.clear();
-                List<String> keys = new ArrayList<String>();
-                for(DataSnapshot keyNode: snapshot.getChildren()) {
-                    Mikveh mikveh = keyNode.getValue(Mikveh.class);
-                    if(mikveh.getOwner_ID().equals(user_id)){
-                        keys.add(keyNode.getKey());
-                        mikvot.add(mikveh);
-                    }
-                }
-                status.DataIsLoaded(mikvot, keys);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-    }
 
     public void addMikveh(Mikveh mikveh, final DataStatus status){
         String key = mReference.push().getKey();
@@ -85,6 +64,27 @@ public class FirebaseRealtimeDatabaseHelper {
             }
         });
     }
+
+    public void readMikvehDB(final DataStatus status) {
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mikvot.clear();
+                List<String> keys = new ArrayList<String>();
+                for(DataSnapshot keyNode: snapshot.getChildren()) {
+                    keys.add(keyNode.getKey());
+                    Mikveh mikveh = keyNode.getValue(Mikveh.class);
+                    mikvot.add(mikveh);
+                }
+                status.DataIsLoaded(mikvot, keys);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
 
 
 
