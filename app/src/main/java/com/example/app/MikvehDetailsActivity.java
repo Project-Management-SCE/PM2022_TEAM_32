@@ -135,7 +135,34 @@ public class MikvehDetailsActivity extends AppCompatActivity {
                 });
             }
         });
-       
+        mDelete_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new FirebaseRealtimeDatabaseHelper().deleteMikveh(key, new FirebaseRealtimeDatabaseHelper.DataStatus() {
+                    @Override
+                    public void DataIsLoaded(List<Mikveh> mikvot, List<String> keys) {
+
+                    }
+
+                    @Override
+                    public void DataIsInserted() {
+
+                    }
+
+                    @Override
+                    public void DataIsUpdated() {
+
+                    }
+
+                    @Override
+                    public void DataIsDeleted() {
+                        Toast.makeText(MikvehDetailsActivity.this, "This record has been" +
+                                "deleted successfully", Toast.LENGTH_LONG).show();
+                        finish();return;
+                    }
+                });
+            }
+        });
         mBack_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -77,4 +77,15 @@ public class FirebaseRealtimeDatabaseHelper {
         });
     }
 
+    public void deleteMikveh(String key, final DataStatus status) {
+        mReference.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                status.DataIsDeleted();
+            }
+        });
+    }
+
+
+
 }
