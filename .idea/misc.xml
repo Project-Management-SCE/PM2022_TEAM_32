@@ -4,8 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_details.xml" value="0.264" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_list.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.4" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh-copie.xml" value="0.2" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh.xml" value="0.2" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_menu_app.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_profile.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/admin_profile.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/admin_toolbar_main.xml" value="0.18297101449275363" />
         <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/edit_user_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.1" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/drawable/ic_menu.xml" value="0.2645" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_admin_menu_app.xml" value="0.2" />
