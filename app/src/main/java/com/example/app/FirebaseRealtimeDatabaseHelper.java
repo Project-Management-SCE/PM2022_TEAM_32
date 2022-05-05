@@ -68,24 +68,13 @@ public class FirebaseRealtimeDatabaseHelper {
         });
     }
 
-    public void readMikvehDB(final DataStatus status) {
-        mReference.addValueEventListener(new ValueEventListener() {
+    public void editMikveh(String key, Mikveh mikveh, final DataStatus status) {
+        mReference.child(key).setValue(mikveh).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mikvot.clear();
-                List<String> keys = new ArrayList<String>();
-                for(DataSnapshot keyNode: snapshot.getChildren()) {
-                    keys.add(keyNode.getKey());
-                    Mikveh mikveh = keyNode.getValue(Mikveh.class);
-                    mikvot.add(mikveh);
-                }
-                status.DataIsLoaded(mikvot, keys);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onSuccess(Void unused) {
+                status.DataIsUpdated();
             }
         });
     }
-    
+
 }
