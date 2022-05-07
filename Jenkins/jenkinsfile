@@ -22,7 +22,8 @@ agent {
 	
 	 stage('Tests') {
 	 	steps {
-			sh './gradlew --no-daemon --debug :app:connectedDevDebugAndroidTest' 		
+			sh "chmod +x gradlew"
+                	sh './gradlew test' 		
 		}
 	}
 	}
