@@ -22,7 +22,7 @@ agent {
 	
 	 stage('Tests') {
 	 	steps {
-                	sh './gradlew androidTest' 		
+                	sh './gradlew test connectedAndroidTest' 		
 		}
 	}
 	}
