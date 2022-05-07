@@ -22,7 +22,7 @@ agent {
 	
 	 stage('Tests') {
 	 	steps {
-                	sh './gradlew test connectedAndroidTest --stacktrace' 		
+                	sh './gradlew --no-daemon --debug :app:connectedDevDebugAndroidTest' 		
 		}
 	}
 	}
