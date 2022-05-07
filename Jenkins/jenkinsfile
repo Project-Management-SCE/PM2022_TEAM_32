@@ -21,7 +21,9 @@ agent {
 	}
 	
 	 stage('Tests') {
-		sh './gradlew --no-daemon --debug :app:connectedDevDebugAndroidTest' 
+	 	steps {
+			sh './gradlew --no-daemon --debug :app:connectedDevDebugAndroidTest' 		
+		}
 	}
 	}
 }
