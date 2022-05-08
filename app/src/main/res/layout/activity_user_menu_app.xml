@@ -65,7 +65,7 @@
             android:backgroundTint="#D1BFBE"
             android:text="@string/select"
             android:textAlignment="center"
-            android:textColor="#e4f2eb" />
+            android:textColor="@color/teal_700" />
 
     </LinearLayout>
 
