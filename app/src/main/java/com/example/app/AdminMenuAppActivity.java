@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class AdminMenuAppActivity extends AppCompatActivity {
 
     TextView admin_menu_header, tollbarTitle;
+    private Button mListMikveh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,20 @@ public class AdminMenuAppActivity extends AppCompatActivity {
 
         admin_menu_header = findViewById(R.id.admin_menu_header);
         tollbarTitle = findViewById(R.id.toolbar_title);
+        mListMikveh = (Button) findViewById(R.id.adm_list_btn);
 
         //admin menu has been clicked
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tollbarTitle = findViewById(R.id.toolbar_title);
         setSupportActionBar(toolbar);
+
+        mListMikveh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminMenuAppActivity.this, MikvehListActivity.class));
+            }
+        });
+
     }
 
     @Override
