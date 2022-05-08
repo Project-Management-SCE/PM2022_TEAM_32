@@ -85,6 +85,41 @@ public class FirebaseRealtimeDatabaseHelper {
         });
     }
 
+    public void readMikvehByPosition(String city ,DataStatus status) {
+            mikvot.clear();
+            List<String> keys = new ArrayList<String>();
+            mReference.orderByChild("city").equalTo(city).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Log.d("Query", snapshot.getValue().toString());
+                Mikveh mikveh = snapshot.getValue(Mikveh.class);
+                mikvot.add(mikveh);
+                keys.add(snapshot.getKey());
+                status.DataIsLoaded(mikvot, keys);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     public void readMikvehByOwner(final DataStatus status) {
         String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mReference.addValueEventListener(new ValueEventListener() {

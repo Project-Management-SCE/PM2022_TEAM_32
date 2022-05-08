@@ -100,7 +100,33 @@ public class MikvehListActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                       
+                        else {
+                            String city = "אופקים";
+                            new FirebaseRealtimeDatabaseHelper().readMikvehByPosition(city, new FirebaseRealtimeDatabaseHelper.DataStatus() {
+                                @Override
+                                public void DataIsLoaded(List<Mikveh> mikvot, List<String> keys) {
+                                    findViewById(R.id.loading_mikvot).setVisibility(View.GONE);
+                                    new RecyclerView_Config().setConfig(mRecyclerView,
+                                            MikvehListActivity.this, mikvot, keys);
+                                }
+
+                                @Override
+                                public void DataIsInserted() {
+
+                                }
+
+                                @Override
+                                public void DataIsUpdated() {
+
+                                }
+
+                                @Override
+                                public void DataIsDeleted() {
+
+                                }
+                            });
+
+                        }
 
                     }
                     else {
