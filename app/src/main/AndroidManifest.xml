@@ -29,7 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".OwnerMenuAppActivity"
-            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".UserMenuAppActivity"
