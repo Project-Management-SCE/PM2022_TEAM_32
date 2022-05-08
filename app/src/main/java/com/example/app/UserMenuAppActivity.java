@@ -18,6 +18,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView user_menu_header, textView_user_menu, tollbarTitle;
@@ -56,6 +59,10 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
                 String userCityChoice = spinner.getSelectedItem().toString();//saving user choice
 
                 //Toast.makeText(UserMenuAppActivity.this, "Chosen city: " + userCityChoice , Toast.LENGTH_SHORT).show();//printing user choice
+
+
+
+
             }
         });
     }

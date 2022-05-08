@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
 
+    UsersListAdapter users_list_adapter = new UsersListAdapter()
+
     // constructor for our list view adapter.
     public UsersListAdapter(@NonNull Context context, ArrayList<UsersDataModel> dataModalArrayList) {
         super(context, 0, dataModalArrayList);
