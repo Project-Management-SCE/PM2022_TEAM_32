@@ -16,6 +16,9 @@
             android:name=".MikvehDetailsActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminManageAppUsers"
+            android:exported="false" />
+        <activity
             android:name=".MikvehListActivity"
             android:exported="false" />
         <activity
@@ -62,6 +65,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
 
         <uses-library
