@@ -54,7 +54,6 @@ public class UserEditProfile extends AppCompatActivity {
         editUsername.setText(userName);
         editEmail.setText(email);
 
-
         //save changes button
         save.setOnClickListener(new View.OnClickListener() {
             @Override
