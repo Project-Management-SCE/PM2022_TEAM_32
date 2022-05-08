@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -40,7 +41,8 @@ public class SignInActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    String userID, profile;
+    FirebaseUser user;
+//    String userID, profile;
 
 
     @Override
@@ -54,8 +56,10 @@ public class SignInActivity extends AppCompatActivity {
         Password = findViewById(R.id.password);
         forgotPassword = findViewById(R.id.forgot_password_link);
         progressBar = findViewById(R.id.login_progress);
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        user = fAuth.getCurrentUser();
 
         LoginButn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,13 +85,37 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                                Toast.makeText(SignInActivity.this, "User Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                //startActivity(new Intent(getApplicationContext(), UserMenuAppActivity.class));
-
-                                startActivity(new Intent(SignInActivity.this, OwnerProfile.class));
-                                //startActivity(new Intent(SignInActivity.this, AdminProfile.class));
-
-
+                            DocumentReference docRef = fStore.collection("Users").document(user.getUid());
+                            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot doc = task.getResult();
+                                        if (doc.exists()) {
+                                            String mail = (String) doc.getString("email");
+                                            String profile = (String) doc.getString("profile");
+                                            if (mail.equals(email)) {
+                                                if (profile.equals("User")) {
+                                                    Toast.makeText(SignInActivity.this, "User Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                                    startActivity(new Intent(getApplicationContext(), UserMenuAppActivity.class));
+                                                }
+                                                else if (profile.equals("Admin")) {
+                                                    Toast.makeText(SignInActivity.this, "Admin Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                                    startActivity(new Intent(getApplicationContext(), AdminMenuAppActivity.class));
+                                                }
+                                                else {
+                                                    Toast.makeText(SignInActivity.this, "Mikveh Owner Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                                    startActivity(new Intent(getApplicationContext(), OwnerMenuAppActivity.class));
+                                                }
+                                            }
+                                            else {
+                                                Toast.makeText(SignInActivity.this, "Email not found in the System. Please sign up :)", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+                                            }
+                                        }
+                                    }
+                                }
+                            });
                         } else {
                             Toast.makeText(SignInActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);

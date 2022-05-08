@@ -44,9 +44,10 @@ public class AdminMenuAppActivity extends AppCompatActivity {
                 adminData();
                 return true;
 
-//            case R.id.adm_manage:
-//                //manage app users
-//                return true;
+            case R.id.adm_manage:
+                admManage();
+                return true;
+
 //            case R.id.adm_settings:
 //                //settings
 //                return true;
@@ -62,6 +63,11 @@ public class AdminMenuAppActivity extends AppCompatActivity {
 
     public void adminData() {
         startActivity(new Intent(AdminMenuAppActivity.this, AdminProfile.class));
+    }
+
+    public void admManage() {
+        startActivity(new Intent(AdminMenuAppActivity.this, AdminManageAppUsers.class));
+
     }
 
     public void logout() {

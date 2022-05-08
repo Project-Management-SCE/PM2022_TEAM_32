@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app">
 
+    <!--Permissions for internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_foreground"
@@ -25,6 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".OwnerMenuAppActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".UserMenuAppActivity"
@@ -63,6 +68,8 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <uses-library android:name="android.test.runner" android:required="false" />
 
         <meta-data
             android:name="preloaded_fonts"
