@@ -1,7 +1,7 @@
 pipeline {
 agent {
 	docker {
-        	image 'androidsdk/android-30:latest'
+        	image 'lkldocker/circleci-android-arm32:0.3'
          	reuseNode true            
         }
 }
