@@ -22,7 +22,7 @@ agent {
 	
 	 stage('Tests') {
 	 	steps {
-                	sh './gradlew --no-daemon --debug :app:src:test' 		
+                	sh './gradlew --no-daemon :app:src:test' 		
 		}
 	}
 	}
