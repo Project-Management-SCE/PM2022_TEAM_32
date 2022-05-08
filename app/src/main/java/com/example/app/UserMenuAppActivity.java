@@ -8,18 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -57,6 +53,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
                 //after user select some city for mikveh location
 
                 String userCityChoice = spinner.getSelectedItem().toString();//saving user choice
+                Intent intent = new Intent(UserMenuAppActivity.this, MikvehListActivity.class);
+                intent.putExtra("cityChoosed", userCityChoice);
+                startActivity(intent);
 
                 //Toast.makeText(UserMenuAppActivity.this, "Chosen city: " + userCityChoice , Toast.LENGTH_SHORT).show();//printing user choice
 

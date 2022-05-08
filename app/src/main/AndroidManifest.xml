@@ -16,6 +16,9 @@
             android:name=".MikvehDetailsActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminManageAppUsers"
+            android:exported="false" />
+        <activity
             android:name=".MikvehListActivity"
             android:exported="false" />
         <activity
@@ -29,7 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".OwnerMenuAppActivity"
-            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".UserMenuAppActivity"
@@ -63,6 +65,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
 
         <uses-library

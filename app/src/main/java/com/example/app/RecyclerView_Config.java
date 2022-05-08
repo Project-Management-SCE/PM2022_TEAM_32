@@ -1,15 +1,14 @@
 package com.example.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.content.Context;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -123,26 +122,6 @@ public class RecyclerView_Config {
                             }
                         }
                     });
-
-                    /////
-//                    Intent intent = new Intent(mContext, MikvehDetailsActivity.class);
-//                    intent.putExtra("key", key);
-//                    intent.putExtra("address", mAddress.getText().toString());
-//                    intent.putExtra("city", mCity.getText().toString());
-//                    intent.putExtra("neighbor", mNeighbor.getText().toString());
-//
-//                    intent.putExtra("religious_Council", mReligious_Council);
-//                    intent.putExtra("opening_Hours_Summer", mOpening_Hours_Summer);
-//                    intent.putExtra("phone", mPhone);
-//                    intent.putExtra("owner_ID", mOwner_ID);
-//                    intent.putExtra("opening_Hours_Winter", mOpening_Hours_Winter);
-//                    intent.putExtra("opening_Hours_Holiday_Eve_Shabat_Eve", mOpening_Hours_Holiday_Eve_Shabat_Eve);
-//                    intent.putExtra("opening_Hours_Saturday_Night_Good_Day", mOpening_Hours_Saturday_Night_Good_Day);
-//                    intent.putExtra("accessibility", mAccessibility);
-//                    intent.putExtra("schedule_Appointment", mSchedule_Appointment);
-//                    intent.putExtra("notes", mNotes);
-//
-//                    mContext.startActivity(intent);
                 }
             });
         }
@@ -165,6 +144,8 @@ public class RecyclerView_Config {
             this.mNotes = mikveh.getNotes();
         }
     }
+
+
     class MikvehAdapter extends RecyclerView.Adapter<MikvehItemView> {
         private List<Mikveh> mMikvot;
         private List<String> mKeys;

@@ -15,8 +15,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.EventListener;
 import java.util.List;
+
+
 
 public class FirebaseRealtimeDatabaseHelper {
     private FirebaseDatabase mDatabase;
@@ -35,7 +36,6 @@ public class FirebaseRealtimeDatabaseHelper {
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference();
     }
-
 
     public void addMikveh(Mikveh mikveh, final DataStatus status){
         String key = mReference.push().getKey();
