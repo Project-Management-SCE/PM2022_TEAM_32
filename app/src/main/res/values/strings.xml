@@ -22,7 +22,17 @@
     <string name="user">User</string>
     <string name="already_sign_in_click_here">Already sign in? Click here!</string>
     <string name="actions">ACTIONS</string>
-
+    <string-array name="times_array">
+        <item>"9:00"</item>
+        <item>"10:00"</item>
+        <item>"11:00"</item>
+        <item>"12:00"</item>
+        <item>"13:00"</item>
+        <item>"14:00"</item>
+        <item>"15:00"</item>
+        <item>"16:00"</item>
+        <item>"17:00"</item>
+    </string-array>
     <string-array name="cities_array">
         <item>"אבן יהודה"</item>
         <item>"אופקים"</item>
@@ -459,5 +469,13 @@
     <string name="your_email_address">Your Email Address</string>
     <string name="user_name_txt">User Name</string>
     <string name="email_txt">Email</string>
+    <string name="my_appointments">my appointments</string>
+    <string name="date">Date</string>
+    <string name="name">Name</string>
+    <string name="time">Time</string>
+    <string name="todo">TODO</string>
+    <string name="New_appointments">New appointment</string>
+    <string name="choose_date">choose date</string>
+    <string name="choose_time">chosse time</string>
 
 </resources>
