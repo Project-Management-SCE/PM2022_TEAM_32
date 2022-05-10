@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckground"
+    android:background="@drawable/white_wallpaper"
     tools:context=".UserEditProfile" >
 
     <LinearLayout
@@ -41,12 +41,17 @@
 
         <Button
             android:id="@+id/save_changes_button"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
-            android:backgroundTint="#D1BFBE"
-            android:text="Save Changes" />
+            android:text="Save Changes"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/suez_one"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:backgroundTint="
+#00ff8c" />
 
 
     </LinearLayout>

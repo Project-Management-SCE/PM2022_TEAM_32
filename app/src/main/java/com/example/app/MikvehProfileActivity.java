@@ -34,7 +34,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
     private String mOpening_Hours_Holiday_Eve_Shabat_Eve;
     private String mOpening_Hours_Saturday_Night_Good_Day;
     private String mAccessibility;
-    private String mSchedule_Appointment;
+    //private String mSchedule_Appointment;
     private String mNotes;
 
     private String key;
@@ -56,7 +56,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mOpening_Hours_Holiday_Eve_Shabat_Eve = getIntent().getStringExtra("opening_Hours_Holiday_Eve_Shabat_Eve");
         mOpening_Hours_Saturday_Night_Good_Day = getIntent().getStringExtra("opening_Hours_Saturday_Night_Good_Day");
         mAccessibility = getIntent().getStringExtra("accessibility");
-        mSchedule_Appointment = getIntent().getStringExtra("schedule_Appointment");
+        //mSchedule_Appointment = getIntent().getStringExtra("schedule_Appointment");
         mNotes = getIntent().getStringExtra("notes");
 
         mCouncil_txtView = (TextView) findViewById(R.id.council_txtView);
@@ -69,7 +69,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mOpeningFriday_txtView = (TextView) findViewById(R.id.openingFriday_txtView);
         mOpeningSaturday_txtView = (TextView) findViewById(R.id.openingSaturday_txtView);
         mAccess_txtView = (TextView) findViewById(R.id.access_txtView);
-        mAppoint_txtView = (TextView) findViewById(R.id.appoint_txtView);
+        //mAppoint_txtView = (TextView) findViewById(R.id.appoint_txtView);
         mNotes_txtView = (TextView) findViewById(R.id.notes_txtView);
         mBack_btn = (Button) findViewById(R.id.back_btn);
 
@@ -83,8 +83,9 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mOpeningFriday_txtView.setText("Opening Hours Friday: " + mOpening_Hours_Holiday_Eve_Shabat_Eve);
         mOpeningSaturday_txtView.setText("Opening Hours Saturday: " + mOpening_Hours_Saturday_Night_Good_Day);
         mAccess_txtView.setText("Accessibility: " + mAccessibility);
-        mAppoint_txtView.setText("Schedule Appointment: " + mSchedule_Appointment);
+        //mAppoint_txtView.setText("Schedule Appointment: " + mSchedule_Appointment);
         mNotes_txtView.setText("Notes: " + mNotes);
+
 
         mBack_btn.setOnClickListener(new View.OnClickListener() {
             @Override

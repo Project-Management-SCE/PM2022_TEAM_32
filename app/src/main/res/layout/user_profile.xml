@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckground"
+    android:padding="10dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/white_wallpaper"
     tools:context=".UserProfile" >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="340dp"
+        android:layout_height="780dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        android:layout_gravity="center"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true" >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -18,8 +30,8 @@
 
         <ImageView
             android:id="@+id/user_image"
-            android:layout_width="280dp"
-            android:layout_height="300dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/userimage" />
 
@@ -86,40 +98,54 @@
 
         <Button
             android:id="@+id/edit_button"
-            android:layout_width="300dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
-            android:backgroundTint="#D1BFBE"
-            android:text="Edit Profile" />
+            android:layout_marginTop="25dp"
+            android:text="Edit Profile"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:backgroundTint="#ebf3ff" />
 
         <Button
             android:id="@+id/resetPassword_button"
-            android:layout_width="300dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#D1BFBE"
-            android:text="Reset Password" />
+            android:layout_marginTop="8dp"
+            android:text="Reset Password"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:backgroundTint="#ebf3ff" />
 
         <Button
             android:id="@+id/goback_button"
-            android:layout_width="300dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#D1BFBE"
-            android:text="Go Back" />
+            android:layout_marginTop="8dp"
+            android:text="Go Back"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:backgroundTint="#ebf3ff"/>
 
         <Button
             android:id="@+id/logout_button"
-            android:layout_width="300dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#D1BFBE"
-            android:text="Logout" />
+            android:layout_marginTop="8dp"
+            android:text="Logout"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/suez_one"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:backgroundTint="#46cfce"/>
 
 
     </LinearLayout>
-
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

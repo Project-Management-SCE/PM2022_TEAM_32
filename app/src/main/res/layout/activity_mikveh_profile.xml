@@ -180,7 +180,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/openingFriday_txtView" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/appoint_txtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -192,19 +192,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/notes_txtView" />
+                app:layout_constraintTop_toBottomOf="@+id/notes_txtView" />-->
+
 
             <Button
                 android:id="@+id/back_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="163dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="160dp"
                 android:text="BACK"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appoint_txtView" />
+                app:layout_constraintTop_toBottomOf="@+id/notes_txtView"
+                android:backgroundTint="#009688" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
