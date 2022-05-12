@@ -11,9 +11,17 @@ pipeline {
                 sh 'chmod +x gradlew && ./gradlew --no-daemon --stacktrace clean'                
             }
         }
+        /* Unit tests */
         stage('Test') {
             steps {           
                 sh './gradlew test'
+            }
+        }
+        
+        /* Build the apk file */
+         stage('build.package') {
+            steps {
+                sh './gradlew assembleDebug'
             }
         }
         }
