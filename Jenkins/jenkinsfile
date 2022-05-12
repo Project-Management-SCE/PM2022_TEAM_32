@@ -1,7 +1,7 @@
 pipeline {
 agent {
 	docker {
-        	image 'androidsdk/android-31:latest'
+        	image 'androidsdk/android-30:latest'
          	reuseNode true            
         }
 }
@@ -22,7 +22,7 @@ agent {
 	
 	 stage('Tests') {
 	 	steps {
-                	sh './gradlew test' 		
+                	sh './gradlew test'	
 		}
 	}
 	}
