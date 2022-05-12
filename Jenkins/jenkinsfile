@@ -5,6 +5,11 @@ pipeline {
         }
     }
     
+     options {
+    // Stop the build early in case of compile or test failures
+        skipStagesAfterUnstable()
+    }
+    
     stages {
         stage('Build') {
             steps {
@@ -19,11 +24,13 @@ pipeline {
         }
         
         /* Build the apk file */
-         stage('build.package') {
+         stage('Build APK') {
             steps {
                 sh './gradlew assembleDebug'
             }
         }
+               
+        
         }
 }
 
