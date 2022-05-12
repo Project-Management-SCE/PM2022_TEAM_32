@@ -20,11 +20,11 @@ agent {
          	}
 	}
 	
-	 /*stage('Tests') {
+	 stage('Tests') {
 	 	steps {
                 	sh './gradlew test'	
 		}
-	}*/
+	}
 	}
 }
 
