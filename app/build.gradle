@@ -1,15 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
+    buildToolsVersion '32.0.0'
 
     defaultConfig {
         applicationId "com.example.app"
-        minSdk 21
+        minSdk 30
         targetSdk 32
         versionCode 1
         versionName "1.0"
