@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/black_wallpaper"
     tools:context=".AdminManageAppUsers" >
 
@@ -17,42 +18,49 @@
 
         </ListView>
 
-        <Button
-            android:id="@+id/users_button"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="553dp"
             android:layout_gravity="center"
-            android:visibility="visible"
-            android:layout_marginTop="20dp"
-            android:text="Users"
-            android:background="@drawable/rounded_corner"
-            android:fontFamily="@font/suez_one"
-            android:textColor="#ff6f6f"
-            android:textSize="18dp"
-            app:backgroundTint="#ffda6c"/>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/owners_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="visible"
-            android:layout_marginTop="170dp"
-            android:text="Mikveh Owners"
-            android:background="@drawable/rounded_corner"
-            android:fontFamily="@font/suez_one"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            app:backgroundTint="#673f72"/>
+                <Button
+                    android:id="@+id/users_button"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="276.5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/suez_one"
+                    android:text="Users"
+                    android:textColor="#ff6f6f"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    app:backgroundTint="#ffda6c" />
 
-        <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:contentDescription="@string/previous"
-            app:srcCompat="@android:drawable/ic_menu_revert" />-->
+                <Button
+                    android:id="@+id/owners_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/suez_one"
+                    android:text="Mikveh Owners"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    app:backgroundTint="#673f72" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="300dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:contentDescription="@string/previous"
+                    app:srcCompat="@android:drawable/ic_menu_revert" />-->
+        </LinearLayout>
+
+</LinearLayout>

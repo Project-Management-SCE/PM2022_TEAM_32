@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/white_wallpaper"
+    android:orientation="vertical"
     android:fitsSystemWindows="true"
     tools:context=".UserMenuAppActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/user_toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="start" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
-
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/user_toolbar_main"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_gravity="left" />
-
 
         <TextView
             android:id="@+id/admin_menu_header"
@@ -67,10 +67,9 @@
             android:background="@drawable/rounded_corner"
             android:fontFamily="@font/suez_one"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:backgroundTint="@color/purple_200"/>
 
+
     </LinearLayout>
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

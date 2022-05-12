@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <!--Text view for displaying our text -->
         <ScrollView
             android:id="@+id/scroll_view"
