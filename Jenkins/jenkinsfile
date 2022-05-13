@@ -29,7 +29,13 @@ pipeline {
                 sh './gradlew assembleDebug'
             }
         }
-               
+        
+        /*Download the apk file */
+        stage('Download APK') {
+            steps {
+                println "https://firebasestorage.googleapis.com/v0/b/mikve-43443.appspot.com/o/app-debug.apk?alt=media&token=8cc58e51-7d05-4bf6-ba35-b30959e9eb1b"      
+            }
+        }
         
         }
 }
