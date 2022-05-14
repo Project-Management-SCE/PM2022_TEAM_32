@@ -1,5 +1,4 @@
 package com.example.app;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,17 +10,17 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.google.firebase.auth.FirebaseAuth;
+
+
 
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView user_menu_header, textView_user_menu, tollbarTitle;
     Spinner spinner;
-    Button select_city_button;
+    Button select_city_button , btn_appoinment;
     FirebaseAuth fAuth;
 
     @Override
@@ -33,6 +32,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         textView_user_menu = findViewById(R.id.text_user_menu);
         spinner = findViewById(R.id.city_spinner);
         select_city_button = findViewById(R.id.select_button);
+        btn_appoinment =findViewById(R.id.appointment_button);
         fAuth = FirebaseAuth.getInstance();
 
         //user menu has been clicked
@@ -45,6 +45,14 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         //spinner.setOnItemSelectedListener(this);
+        btn_appoinment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserMenuAppActivity.this, MyAppointment.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         select_city_button.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +89,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
             case R.id.item1:
                 userData();
                 return true;
-//            case R.id.item2:
-//                showHelp();
-//                return true;
+            case R.id.item2:
+                contactus();
+                return true;
             case R.id.item3:
                 logout();
                 return true;
@@ -95,6 +103,11 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     public void userData() {
         startActivity(new Intent(UserMenuAppActivity.this, UserProfile.class));
     }
+    public void contactus() {
+        startActivity(new Intent(UserMenuAppActivity.this, ContactUs.class));
+    }
+
+
 
 //    public void userAppo(MenuItem item) {
 //        //create user appoitements function

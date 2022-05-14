@@ -2,16 +2,20 @@ package com.example.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +28,10 @@ import java.util.List;
 public class RecyclerView_Config {
     private Context mContext;
     private MikvehAdapter mMivehAdapter;
+//
+//    private Button mDetails;
+//    private Button mCreateAppointment;
+
 
     public void setConfig(RecyclerView recyclerView, Context context, List<Mikveh> mikvot, List<String> keys) {
         mContext = context;
@@ -49,6 +57,7 @@ public class RecyclerView_Config {
         private String mNotes;
 
         private String key;
+
 
         public MikvehItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext).inflate(R.layout.mikveh_list_item, parent, false));

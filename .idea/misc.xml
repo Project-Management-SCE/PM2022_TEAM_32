@@ -3,20 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/activity_booking.xml" value="0.1675929884566054" />
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/admin_edit_profile.xml" value="0.11928174433518597" />
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/booikngpage.xml" value="0.33" />
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/booking.xml" value="0.1675929884566054" />
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.16417272338606242" />
-        <entry key="..\:/Users/Ariel Kadosh/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/time_slot.xml" value="0.25" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_admin_menu_app.xml" value="0.1" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_details.xml" value="0.264" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_list.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.4" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh-copie.xml" value="0.2" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh.xml" value="0.2" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_menu_app.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_profile.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/admin_profile.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/admin_toolbar_main.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/edit_user_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.18297101449275363" />
+        <entry key="..\:/Users/adam3/AppData/Local/Android/Sdk/Mikva/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.1" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/drawable/ic_menu.xml" value="0.2645" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/drawable/rounded_corner.xml" value="0.152" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_admin_menu_app.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_menu_app.xml" value="0.16" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_details.xml" value="0.2" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_list.xml" value="0.2" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.176" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh.xml" value="0.16908431550317315" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_menu_app.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu.xml" value="0.2129115006412997" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_edit_profile.xml" value="0.19265639165911153" />
@@ -25,6 +42,8 @@
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_toolbar_main.xml" value="0.15519452757588714" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/content_user_menu.xml" value="0.2129115006412997" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/edit_user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/fragment_maps.xml" value="0.16908431550317315" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.264" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.15519452757588714" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.2129115006412997" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.264" />
@@ -42,27 +61,38 @@
         <entry key="..\:/Users/victo/AndroidStudioProjects/App/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_admin_menu_app.xml" value="0.25" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_booking.xml" value="0.13552800342026508" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_contact_us.xml" value="0.20906370243693886" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_menu_app.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_details.xml" value="0.1996579734929457" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_list.xml" value="0.26079521162890124" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.26079521162890124" />
-        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_my_appointment.xml" value="0.1" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_my_appointment.xml" value="0.22" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_my_time_slot_adapter.xml" value="0.21419410004275333" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_new_appointment.xml" value="0.18" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh.xml" value="0.1996579734929457" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_menu_app.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_profile.xml" value="0.26079521162890124" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.315625" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_time_slot.xml" value="0.1" />
-        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.1" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.22" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/admin_edit_profile.xml" value="0.1996579734929457" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/admin_manage_app_users.xml" value="0.1996579734929457" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/admin_profile.xml" value="0.1996579734929457" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/admin_toolbar_main.xml" value="0.1996579734929457" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/booikngpage.xml" value="0.13552800342026508" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/booking.xml" value="0.13552800342026508" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/input_layout.xml" value="0.18" />
-        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/item_layout.xml" value="0.1" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.1996579734929457" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.1996579734929457" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/time_slot.xml" value="0.13552800342026508" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.13552800342026508" />
-        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.13552800342026508" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.33" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/user_toolbar_main.xml" value="0.1996579734929457" />
         <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/layout/users_list_item.xml" value="0.13552800342026508" />
+        <entry key="..\:/Users/victo/AppData/Local/Android/Sdk/new/PM2022_TEAM_32/app/src/main/res/menu/user_menu.xml" value="0.20906370243693886" />
       </map>
     </option>
   </component>

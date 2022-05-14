@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db52306f-7380-4cc5-a5f8-77cedb8ed56c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jenkins/jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Jenkins/jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/AdapterItemappointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/AdapterItemappointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/AdminEditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/AdminEditProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/AdminManageAppUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/AdminManageAppUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/AdminMenuAppActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/AdminMenuAppActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/AdminProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/AdminProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/FirebaseRealtimeDatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/FirebaseRealtimeDatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/Mikveh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/Mikveh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/MikvehProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/MyAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/MyAppointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/NewMikvehActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/NewMikvehActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/OwnerMenuAppActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/OwnerMenuAppActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/OwnerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/OwnerProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/RecyclerView_Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/RecyclerView_Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/SignInActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/SignInActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/SignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/UserEditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/UserEditProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/UserMenuAppActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/UserMenuAppActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/UsersDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/UsersDataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/UsersListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/UsersListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/dataUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/dataUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/font/alata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/font/alata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/font/roboto_slab_bold.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/font/roboto_slab_bold.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_admin_menu_app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_admin_menu_app.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mikveh_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_my_appointment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_my_appointment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_new_mikveh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_new_mikveh.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_owner_menu_app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_owner_menu_app.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_owner_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_owner_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_user_menu_app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_user_menu_app.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/admin_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/admin_edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/admin_manage_app_users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/admin_manage_app_users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/admin_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/admin_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/admin_toolbar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/admin_toolbar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/input_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/input_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/mikveh_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/mikveh_list_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/owner_toolbar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/owner_toolbar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/user_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/user_edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/user_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/user_toolbar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/user_toolbar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/users_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/users_list_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/menu/admin_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/menu/admin_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/menu/owner_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/menu/owner_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/menu/user_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/menu/user_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/icon_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/icon_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-land/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-w1240dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values-w600dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/font_certs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/font_certs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/icon_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/icon_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/preloaded_fonts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/app/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/app/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/app/MikvehTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/app/MikvehTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/app/UsersDataModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/app/UsersDataModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="28zWnxmfpB6TLOjw1WvrO5MfagP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db52306f-7380-4cc5-a5f8-77cedb8ed56c" name="Changes" comment="" />
+      <created>1652220066562</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652220066562</updated>
+    </task>
+    <servers />
+  </component>
+</project>

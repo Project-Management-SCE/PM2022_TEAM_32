@@ -1,14 +1,16 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.firebase.appdistribution'
     id 'com.google.gms.google-services'
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
+    buildToolsVersion '32.0.0'
 
     defaultConfig {
         applicationId "com.example.app"
-        minSdk 21
+        minSdk 29
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -20,8 +22,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseAppDistribution {
+                releaseNotes = "Mikveh Point Version 1.0"
+                serviceCredentialsFile = "C:\\Users\\shira\\AppData\\Local\\Android\\Sdk\\newapp\\PM2022_TEAM_32\\app\\mikve-43443-e8b832376812.json"
+                groups= "testers"
+            }
         }
     }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -43,6 +52,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.3'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+    //Google maps
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     //Unit test
     testImplementation 'junit:junit:4.13.2'

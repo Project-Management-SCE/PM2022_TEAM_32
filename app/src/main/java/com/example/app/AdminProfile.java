@@ -71,10 +71,11 @@ public class AdminProfile extends AppCompatActivity {
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
-                i.putExtra("userName", admUsernameVIEW.getText().toString());
-                i.putExtra("email", admEmailVIEW.getText().toString());
-                startActivity(i);
+                startActivity(new Intent(AdminProfile.this, AdminEditProfile.class));
+//                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
+//                i.putExtra("userName", admUsernameVIEW.getText().toString());
+//                i.putExtra("email", admEmailVIEW.getText().toString());
+//                startActivity(i);
             }
         });
 

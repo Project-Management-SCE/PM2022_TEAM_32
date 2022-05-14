@@ -51,19 +51,19 @@ public class AdminMenuAppActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.adm_profile:
+            case R.id.item1:
                 adminData();
                 return true;
 
-            case R.id.adm_manage:
+            case R.id.item2:
                 admManage();
                 return true;
 
-//            case R.id.adm_settings:
+//            case R.id.item3:
 //                //settings
 //                return true;
 
-            case R.id.adm_logoff:
+            case R.id.item4:
                 logout();
                 return true;
 

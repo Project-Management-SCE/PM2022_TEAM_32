@@ -4,7 +4,7 @@
     <string name="sign_in">Sign in</string>
     <string name="email_hint">Enter email</string>
     <string name="title_text">MIKVEH POINT</string>
-    <string name="greateful_text">Mikveh Finder at home or away, find a mikveh near you and order an appointment easily</string>
+    <string name="greateful_text">Mikveh Finder, find a mikveh near you and order an appointment easily</string>
     <string name="get_started_text">get started</string>
     <string name="password_hint">Enter password</string>
     <string name="or_text">or</string>
@@ -455,7 +455,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="profile">Profile</string>
-    <string name="my_appoitments">My appoitments</string>
+    <string name="Contact_us">/Contact us</string>
     <string name="logout">Logout</string>
     <string name="menu">Menu</string>
     <string name="manage_app_users">Manage App Users</string>
@@ -477,5 +477,9 @@
     <string name="New_appointments">New appointment</string>
     <string name="choose_date">choose date</string>
     <string name="choose_time">chosse time</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="my_appoinments">My appoinments</string>
+    <string name="contact">Contact us</string>
+    <string name="content">content</string>
 
 </resources>
