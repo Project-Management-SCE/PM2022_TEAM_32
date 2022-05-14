@@ -85,9 +85,9 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="167dp"
                     android:textAlignment="center"
-                    android:textSize="150sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/send_button"
