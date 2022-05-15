@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:visibility="visible"
     android:background="@drawable/white_wallpaper"
-    tools:context=".NewMikvehActivity">
+    tools:context=".MikvehProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,8 +35,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"
                     android:ems="15"
+                    android:gravity="center"
                     android:hint="Phone"
                     android:inputType="textLongMessage|textMultiLine"
                     android:textSize="20sp" />
@@ -163,17 +163,33 @@
                     android:layout_marginStart="163dp"
                     android:layout_marginTop="300dp"
                     android:layout_marginEnd="160dp"
+                    android:backgroundTint="#009688"
                     android:text="BACK"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/notes_txtView"
-                    android:backgroundTint="#009688" />
+                    app:layout_constraintTop_toBottomOf="@+id/notes_txtView" />
+
+
+
             </androidx.cardview.widget.CardView>
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#D1BFBE"
+                android:contentDescription="@string/todo"
+                android:src="@android:drawable/ic_input_add"
+                android:tint="@android:color/white" />
+
         </LinearLayout>
-
-
     <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -184,5 +200,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">-->
 
+
     </ScrollView>
+
+
 </LinearLayout>
