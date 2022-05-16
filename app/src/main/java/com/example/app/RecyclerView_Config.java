@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,17 +26,13 @@ import java.util.List;
 
 public class RecyclerView_Config {
     private Context mContext;
-    private MikvehAdapter mMivehAdapter;
-//
-//    private Button mDetails;
-//    private Button mCreateAppointment;
-
+    private MikvehAdapter mMikvehAdapter;
 
     public void setConfig(RecyclerView recyclerView, Context context, List<Mikveh> mikvot, List<String> keys) {
         mContext = context;
-        mMivehAdapter = new MikvehAdapter(mikvot, keys);
+        mMikvehAdapter = new MikvehAdapter(mikvot, keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setAdapter(mMivehAdapter);
+        recyclerView.setAdapter(mMikvehAdapter);
     }
 
     class MikvehItemView extends RecyclerView.ViewHolder {
@@ -64,6 +59,7 @@ public class RecyclerView_Config {
             mAddress = (TextView) itemView.findViewById(R.id.address_txtView);
             mCity = (TextView) itemView.findViewById(R.id.city_txtView);
             mNeighbor = (TextView) itemView.findViewById(R.id.neighbor_txtView);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

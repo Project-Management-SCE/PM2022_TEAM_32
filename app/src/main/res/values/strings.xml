@@ -455,7 +455,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="profile">Profile</string>
-    <string name="Contact_us">/Contact us</string>
+    <string name="my_appoitments">My appoitments</string>
     <string name="logout">Logout</string>
     <string name="menu">Menu</string>
     <string name="manage_app_users">Manage App Users</string>
@@ -477,9 +477,9 @@
     <string name="New_appointments">New appointment</string>
     <string name="choose_date">choose date</string>
     <string name="choose_time">chosse time</string>
-    <string name="contact_us">Contact Us</string>
-    <string name="my_appoinments">My appoinments</string>
-    <string name="contact">Contact us</string>
-    <string name="content">content</string>
+    <string name="create_appoitment">Create Appoitment</string>
+    <string name="back">BACK</string>
+    <string name="button">Button</string>
+    <string name="contact_us">Contact us</string>
 
 </resources>

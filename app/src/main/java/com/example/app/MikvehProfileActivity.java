@@ -1,6 +1,7 @@
 package com.example.app;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,47 +9,64 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MikvehProfileActivity extends AppCompatActivity {
-    ArrayList<dataUser> list = new ArrayList<>();
-    AdapterItemappointment adapterItem;
-    Date realtime;
+    public static final String TAG = "TAG";
+
+    String userID, meetingID;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
     Button dateButton,saveData;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    EditText dateTextET, nameText;
+    EditText dateTextET, timeText;
+    TextView nameText;
     Spinner spinner;
     Context context;
     AlertDialog builderAlert;
     LayoutInflater layoutInflater;
     View showInput;
-    FloatingActionButton fab_add;
-    RecyclerView recyclerView;
-
 
     private TextView mCouncil_txtView;
     private TextView mCity_txtView;
@@ -60,8 +78,8 @@ public class MikvehProfileActivity extends AppCompatActivity {
     private TextView mOpeningFriday_txtView;
     private TextView mOpeningSaturday_txtView;
     private TextView mAccess_txtView;
-    private TextView mAppoint_txtView;
     private TextView mNotes_txtView;
+    private Button mCreate;
     private Button mBack_btn;
 
     private String mAddress;
@@ -75,15 +93,26 @@ public class MikvehProfileActivity extends AppCompatActivity {
     private String mOpening_Hours_Holiday_Eve_Shabat_Eve;
     private String mOpening_Hours_Saturday_Night_Good_Day;
     private String mAccessibility;
-    //private String mSchedule_Appointment;
     private String mNotes;
 
+
     private String key;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mikveh_profile);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+        meetingID = fAuth.getUid();
+
+
+        mCreate = findViewById(R.id.create);
+        context = this;
+        //recyclerView = findViewById(R.id.mikveh_recyclerView);
 
         key = getIntent().getStringExtra("key");
         mAddress = getIntent().getStringExtra("address");
@@ -110,7 +139,6 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mOpeningFriday_txtView = (TextView) findViewById(R.id.openingFriday_txtView);
         mOpeningSaturday_txtView = (TextView) findViewById(R.id.openingSaturday_txtView);
         mAccess_txtView = (TextView) findViewById(R.id.access_txtView);
-        //mAppoint_txtView = (TextView) findViewById(R.id.appoint_txtView);
         mNotes_txtView = (TextView) findViewById(R.id.notes_txtView);
         mBack_btn = (Button) findViewById(R.id.back_btn);
 
@@ -124,35 +152,29 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mOpeningFriday_txtView.setText("Opening Hours Friday: " + mOpening_Hours_Holiday_Eve_Shabat_Eve);
         mOpeningSaturday_txtView.setText("Opening Hours Saturday: " + mOpening_Hours_Saturday_Night_Good_Day);
         mAccess_txtView.setText("Accessibility: " + mAccessibility);
-        //mAppoint_txtView.setText("Schedule Appointment: " + mSchedule_Appointment);
         mNotes_txtView.setText("Notes: " + mNotes);
 
 
-        mBack_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();return;
-            }
-        });
-
-        fab_add = findViewById(R.id.fab_add);
-        context = this;
-        recyclerView = findViewById(R.id.recyclerView);
-
-        fab_add.setOnClickListener(new View.OnClickListener() {
+        mCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 inputData();
             }
         });
 
         //showData();
 
-
-    }
+        mBack_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                return;
+            }
+        });
+    }//on create
 
     private void inputData() {
+
         builderAlert = new AlertDialog.Builder(context).create();
         layoutInflater = getLayoutInflater();
         showInput = layoutInflater.inflate(R.layout.input_layout, null);
@@ -162,13 +184,41 @@ public class MikvehProfileActivity extends AppCompatActivity {
         spinner = showInput.findViewById(R.id.time_spinner);
         dateButton = showInput.findViewById(R.id.btnDate);
         dateTextET = showInput.findViewById(R.id.et_date);
+        timeText = showInput.findViewById(R.id.txt_time);
         saveData = showInput.findViewById(R.id.saveData);
         builderAlert.show();
 
+        DocumentReference documentReference = fStore.collection("Users").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                nameText.setText(documentSnapshot.getString("userName"));
+            }
+        });
+
         //Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.times_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(MikvehProfileActivity.this, R.array.times_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        timeText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View arg0, boolean hasFocus) {
+                if(hasFocus){
+                    spinner.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,int position, long id) {
+                timeText.setText(spinner.getSelectedItem().toString()); //this is taking the first value of the spinner by default.
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         //spinner.setOnItemSelectedListener(this);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
@@ -178,39 +228,41 @@ public class MikvehProfileActivity extends AppCompatActivity {
             }
         });
 
-
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String name = nameText.getText().toString();
-                String date = dateTextET.getText().toString();
-                if (name.isEmpty()) {
-                    nameText.setError("empty");
-                    nameText.requestFocus();
+            public void onClick(View view) {
+                final String time = timeText.getText().toString();
+                final String date = dateTextET.getText().toString();
+                final String name = nameText.getText().toString();
 
-                } else {
-                    database.child("appointments").child(name).setValue(new dataUser(
-                            name,date,realtime.getTime()
+                userID = fAuth.getCurrentUser().getUid();
+                DocumentReference documentReference = fStore.collection("Users").document(userID).collection("Appointments").document();
+                Map<String, Object> meeting = new HashMap<>();
+                meeting.put("date", date);
+                meeting.put("time", time);
+                meeting.put("address", mAddress);
+                meeting.put("city", mCity);
+                meeting.put("name", name);
 
-                    )).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(context, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show();
-                            builderAlert.dismiss();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-                            builderAlert.dismiss();
-                        }
-                    });
-
-                }
+                documentReference.set(meeting).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(context, "Meeting Created! ", Toast.LENGTH_SHORT).show();
+                        builderAlert.dismiss();
+                        //startActivity(new Intent(MikvehProfileActivity.this, MyAppointment.class));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(context, "Error! ", Toast.LENGTH_SHORT).show();
+                        builderAlert.dismiss();
+                        //startActivity(new Intent(MikvehProfileActivity.this, MyAppointment.class));
+                    }
+                });
             }
         });
-
     }
+
     private void handleDateButton() {
         Calendar calendar = Calendar.getInstance();
         int YEAR = calendar.get(Calendar.YEAR);
@@ -232,37 +284,6 @@ public class MikvehProfileActivity extends AppCompatActivity {
         }, YEAR, MONTH, DATE);
 
         datePickerDialog.show();
-
     }
-
-    private void showData() {
-        database.child("appointments").addValueEventListener(new ValueEventListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                showLisener(snapshot);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private void showLisener(DataSnapshot snapshot) {
-        list.clear();
-        for (DataSnapshot item : snapshot.getChildren()) {
-            dataUser user = item.getValue(dataUser.class);
-            list.add(user);
-        }
-        adapterItem = new AdapterItemappointment(context, list);
-        recyclerView.setAdapter(adapterItem);
-    }
-
-
-
 
 }
