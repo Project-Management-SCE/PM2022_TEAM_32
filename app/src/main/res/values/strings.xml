@@ -477,5 +477,8 @@
     <string name="New_appointments">New appointment</string>
     <string name="choose_date">choose date</string>
     <string name="choose_time">chosse time</string>
+    <string name="create_appoitment">Create Appoitment</string>
+    <string name="back">BACK</string>
+    <string name="button">Button</string>
 
 </resources>

@@ -58,6 +58,9 @@
             android:name=".UserEditProfile"
             android:exported="false" />
         <activity
+            android:name=".MyAppointment"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

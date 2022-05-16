@@ -22,11 +22,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            firebaseAppDistribution {
-                releaseNotes = "Mikveh Point Version 1.0"
-                serviceCredentialsFile = "C:\\Users\\shira\\AppData\\Local\\Android\\Sdk\\newapp\\PM2022_TEAM_32\\app\\mikve-43443-e8b832376812.json"
-                groups= "testers"
-            }
+//            firebaseAppDistribution {
+//                releaseNotes = "Mikveh Point Version 1.0"
+//                serviceCredentialsFile = "./mikve-43443-e8b832376812.json"
+//                groups= "testers"
+//            }
         }
     }
 
@@ -53,8 +53,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
-    //Google maps
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     //Unit test
     testImplementation 'junit:junit:4.13.2'

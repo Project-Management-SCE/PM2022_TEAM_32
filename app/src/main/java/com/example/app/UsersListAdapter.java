@@ -50,14 +50,14 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
         email.setText(dataModal.getEmail());
 
 
-        listitemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // on the item click on our list view.
-                // we are displaying a toast message.
-                Toast.makeText(getContext(), "Item clicked is : " + dataModal.getUsername(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        listitemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // on the item click on our list view.
+//                // we are displaying a toast message.
+//                Toast.makeText(getContext(), "Item clicked is : " + dataModal.getUsername(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return listitemView;
 
     }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:textDirection="rtl">
+    android:textDirection="ltr">
 
 
     <androidx.cardview.widget.CardView
@@ -25,38 +25,12 @@
             android:layout_height="130dp"
             app:srcCompat="@drawable/google_maps" />
 
-        <Button
-            android:id="@+id/details"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="130dp"
-            android:layout_marginEnd="160dp"
-            android:backgroundTint="#ffde47"
-            android:text="Details"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/create_appoitment"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginEnd="160dp"
-            android:backgroundTint="#4889f4"
-            android:text="Create Appoitment"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/address_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:layout_marginStart="15dp"
             android:layout_marginTop="140dp"
             android:text="TextView"
@@ -72,6 +46,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="170dp"
             android:layout_marginBottom="8dp"
+            android:layout_gravity="right"
             android:text="TextView"
             android:textDirection="rtl"
             android:textStyle="bold|italic"
@@ -86,8 +61,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="190dp"
             android:layout_marginEnd="4dp"
-            android:text="TextView"
+            android:layout_gravity="right"
             android:textDirection="rtl"
+            android:text="TextView"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
