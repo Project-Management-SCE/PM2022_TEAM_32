@@ -1,6 +1,7 @@
 package com.example.app;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
+
 
     // constructor for our list view adapter.
     public AdapterItemAppointment(@NonNull Context context, ArrayList<dataUser> dataArrayList) {
@@ -25,8 +38,6 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // below line is use to inflate the
-        // layout for our item of list view.
         View listitemView = convertView;
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.item_layout, parent, false);
@@ -42,22 +53,26 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
         TextView time = listitemView.findViewById(R.id.txt_time_item);
         ImageButton delete = listitemView.findViewById(R.id.imageView);
 
-        // after initializing our items we are
-        // setting data to our view.
-        // below line is use to set data to our text view.
         name.setText(data_model.getName());
         address.setText(data_model.getAddress());
         city.setText(data_model.getCity());
         date.setText(data_model.getDate());
         time.setText(data_model.getTime());
 
-
-//        listitemView.setOnClickListener(new View.OnClickListener() {
+//        fStore = FirebaseFirestore.getInstance();
+//        delete.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                // on the item click on our list view.
-//                // we are displaying a toast message.
-//                //Toast.makeText(getContext(), "Item clicked is : " + data_user.getUsername(), Toast.LENGTH_SHORT).show();
+//                CollectionReference collRef = fStore.collection("Users").document(userID).collection("Appointments");
+//                Map<String, Object> updates = new HashMap<>();
+//                updates.put("name", FieldValue.delete());
+//
+//                collRef.document(meetingID).update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        //...
+//                    }
+//                });
 //            }
 //        });
         return listitemView;

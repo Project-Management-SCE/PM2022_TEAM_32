@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,6 +70,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
     LayoutInflater layoutInflater;
     View showInput;
 
+
     private TextView mCouncil_txtView;
     private TextView mCity_txtView;
     private TextView mNeighborhood_txtView;
@@ -95,7 +98,6 @@ public class MikvehProfileActivity extends AppCompatActivity {
     private String mAccessibility;
     private String mNotes;
 
-
     private String key;
 
 
@@ -112,7 +114,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
 
         mCreate = findViewById(R.id.create);
         context = this;
-        //recyclerView = findViewById(R.id.mikveh_recyclerView);
+
 
         key = getIntent().getStringExtra("key");
         mAddress = getIntent().getStringExtra("address");
@@ -154,7 +156,6 @@ public class MikvehProfileActivity extends AppCompatActivity {
         mAccess_txtView.setText("Accessibility: " + mAccessibility);
         mNotes_txtView.setText("Notes: " + mNotes);
 
-
         mCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +172,9 @@ public class MikvehProfileActivity extends AppCompatActivity {
                 return;
             }
         });
-    }//on create
+
+    }
+
 
     private void inputData() {
 
@@ -249,7 +252,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(context, "Meeting Created! ", Toast.LENGTH_SHORT).show();
                         builderAlert.dismiss();
-                        //startActivity(new Intent(MikvehProfileActivity.this, MyAppointment.class));
+                        startActivity(new Intent(MikvehProfileActivity.this, MyAppointment.class));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -286,4 +289,7 @@ public class MikvehProfileActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+
 }
+
+

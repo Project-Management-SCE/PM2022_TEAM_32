@@ -32,6 +32,7 @@ public class AdminManageAppUsers extends AppCompatActivity {
     ListView usersList;
     ScrollView sv;
     Button usersButton, ownersButton;
+    ImageButton delete;
     ArrayList<UsersDataModel> dataModalArrayList;
     FirebaseFirestore db;
     String choice;

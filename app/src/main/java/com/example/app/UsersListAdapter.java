@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
         TextView userName = listitemView.findViewById(R.id.username_txt);
         TextView profile = listitemView.findViewById(R.id.profile_txt);
         TextView email = listitemView.findViewById(R.id.email_txt);
-        Button delete = listitemView.findViewById(R.id.delete_button);
+        ImageButton delete = listitemView.findViewById(R.id.imageView);
 
         // after initializing our items we are
         // setting data to our view.

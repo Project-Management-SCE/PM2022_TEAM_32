@@ -52,6 +52,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="44dp"
             android:gravity="center"
+            android:textDirection="rtl"
             android:theme="@style/CustomSpinnerTheme"
             tools:ignore="SpeakableTextPresentCheck" />
 

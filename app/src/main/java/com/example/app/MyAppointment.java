@@ -110,43 +110,15 @@ public class MyAppointment extends AppCompatActivity {
         });
 
 
-
-//        bulletinRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                        TVname.setText(document.getString("name"));
-//                        TVaddress.setText(document.getString("address"));
-//                        TVcity.setText(document.getString("city"));
-//                        TVdate.setText(document.getString("date"));
-//                        TVtime.setText(document.getString("time"));
-//                    }
-//                } else {
-//                    Log.d(TAG, "Error getting documents: ", task.getException());
-//                }
-//            }
-//        });
-
-//        DocumentReference docRef = fStore.collection("Users").document(userID).collection("Appointments").document(meetingID);
-//        docRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-//                TVname.setText(documentSnapshot.getString("name"));
-//                TVaddress.setText(documentSnapshot.getString("address"));
-//                TVcity.setText(documentSnapshot.getString("city"));
-//                TVdate.setText(documentSnapshot.getString("date"));
-//                TVtime.setText(documentSnapshot.getString("time"));
-//            }
-//        });
-
         buttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loadData();
             }
         });
+
     }
+
 
     private void loadData() {
         meetingsList.setVisibility(View.VISIBLE);
@@ -178,6 +150,8 @@ public class MyAppointment extends AppCompatActivity {
                 // when we get any error from Firebase.
                 Toast.makeText(MyAppointment.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
             }
+
         });
+
     }
 }

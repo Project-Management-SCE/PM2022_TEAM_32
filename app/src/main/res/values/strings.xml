@@ -455,7 +455,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="profile">Profile</string>
-    <string name="my_appoitments">My appoitments</string>
+    <string name="my_appoitments">My Appointments</string>
     <string name="logout">Logout</string>
     <string name="menu">Menu</string>
     <string name="manage_app_users">Manage App Users</string>
@@ -469,7 +469,6 @@
     <string name="your_email_address">Your Email Address</string>
     <string name="user_name_txt">User Name</string>
     <string name="email_txt">Email</string>
-    <string name="my_appointments">my appointments</string>
     <string name="date">Date</string>
     <string name="name">Name</string>
     <string name="time">Time</string>
@@ -480,5 +479,6 @@
     <string name="create_appoitment">Create Appoitment</string>
     <string name="back">BACK</string>
     <string name="button">Button</string>
+    <string name="show_my_upcoming_meetings">Show My Upcoming Meetings</string>
 
 </resources>
