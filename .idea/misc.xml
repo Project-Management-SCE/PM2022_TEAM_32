@@ -29,31 +29,28 @@
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_menu_app.xml" value="0.16" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_details.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_list.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.176" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_mikveh_profile.xml" value="0.2" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_my_appointment.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_new_mikveh.xml" value="0.16908431550317315" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_owner_menu_app.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu.xml" value="0.2129115006412997" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/activity_user_menu_app.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_edit_profile.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_manage_app_users.xml" value="0.2" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_profile.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_edit_profile.xml" value="0.19265639165911153" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_manage_app_users.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_profile.xml" value="0.19265639165911153" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/admin_toolbar_main.xml" value="0.15519452757588714" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/content_user_menu.xml" value="0.2129115006412997" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/fragment_maps.xml" value="0.16908431550317315" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.264" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/edit_user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/fragment_maps.xml" value="0.16908431550317315" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/input_layout.xml" value="0.21205643437366395" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/item_layout.xml" value="0.264" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/mikveh_list_item.xml" value="0.2330508474576271" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/owner_toolbar_main.xml" value="0.15519452757588714" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.16" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_edit_profile.xml" value="0.2129115006412997" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_profile.xml" value="0.2" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/user_toolbar_main.xml" value="0.15818725951261223" />
-        <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/users_list_item.xml" value="0.17135086128739802" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/layout/users_list_item.xml" value="0.264" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/menu/admin_menu.xml" value="0.12612227447627192" />
         <entry key="..\:/Users/shira/AppData/Local/Android/Sdk/newapp/PM2022_TEAM_32/app/src/main/res/menu/owner_menu.xml" value="0.12612227447627192" />
