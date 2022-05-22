@@ -27,10 +27,6 @@ pipeline {
                         }
                     }
                 }
-            /* steps {           
-                sh './gradlew test'
-                junit '**/build/test-results/test/*.xml'
-            } */
         }
         
         /* Build the apk file */
