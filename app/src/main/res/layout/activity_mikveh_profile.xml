@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/what"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".NewMikvehActivity">
+    android:background="@drawable/white_wallpaper"
+    tools:context=".MikvehProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,10 +21,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/access_txtView"
             app:layout_constraintTop_toBottomOf="@+id/access_txtView">
 
@@ -29,11 +33,13 @@
                 android:id="@+id/phone_txtView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:ems="12"
                 android:hint="Phone"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +50,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Opening Hours Summer"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -58,10 +66,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Neighborhood"
                 android:inputType="textLongMessage|textMultiLine"
-                android:textAlignment="viewStart"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -73,7 +82,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Council"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -87,7 +98,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Opening Hours Winter"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -101,7 +114,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Accessibility"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -115,7 +130,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Opening Hours Saturday"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -129,7 +146,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="City"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -143,7 +162,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Address"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -157,7 +178,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Opening Hours Friday"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -171,7 +194,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:ems="10"
+                android:layout_gravity="center"
+                android:ems="12"
+                android:textStyle="bold"
                 android:hint="Notes"
                 android:inputType="textLongMessage|textMultiLine"
                 android:textSize="18sp"
@@ -180,33 +205,46 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/openingFriday_txtView" />
 
-            <TextView
-                android:id="@+id/appoint_txtView"
-                android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/create"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Schedule Appointment"
-                android:inputType="textLongMessage|textMultiLine"
-                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="163dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="160dp"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/suez_one"
+                android:text="@string/create_appoitment"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="#46cfce"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/notes_txtView" />
+                app:layout_constraintTop_toBottomOf="@+id/scheduling" />
+
 
             <Button
                 android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="163dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="160dp"
-                android:text="BACK"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/suez_one"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="#46cfce"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appoint_txtView" />
+                app:layout_constraintTop_toBottomOf="@+id/scheduling" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -32,7 +32,7 @@ public class AdminManageAppUsers extends AppCompatActivity {
     ListView usersList;
     ScrollView sv;
     Button usersButton, ownersButton;
-    FloatingActionButton goback;
+    ImageButton delete;
     ArrayList<UsersDataModel> dataModalArrayList;
     FirebaseFirestore db;
     String choice;
@@ -47,18 +47,9 @@ public class AdminManageAppUsers extends AppCompatActivity {
         sv = findViewById(R.id.scroll_view);
         usersButton = findViewById(R.id.users_button);
         ownersButton = findViewById(R.id.owners_button);
-        goback = findViewById(R.id.floatingActionButton);
         dataModalArrayList = new ArrayList<>();
 
         db = FirebaseFirestore.getInstance();
-
-        goback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AdminManageAppUsers.this, AdminMenuAppActivity.class));
-            }
-        });
-
 
         // here we are calling a method
         // to load data in our list view.

@@ -81,9 +81,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
             case R.id.item1:
                 userData();
                 return true;
-//            case R.id.item2:
-//                showHelp();
-//                return true;
+            case R.id.item2:
+                userMeetings();
+                return true;
             case R.id.item3:
                 logout();
                 return true;
@@ -96,9 +96,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         startActivity(new Intent(UserMenuAppActivity.this, UserProfile.class));
     }
 
-//    public void userAppo(MenuItem item) {
-//        //create user appoitements function
-//    }
+    public void userMeetings() {
+        startActivity(new Intent(UserMenuAppActivity.this, MyAppointment.class));
+    }
 
     public void logout() {
         FirebaseAuth.getInstance().signOut();//logout

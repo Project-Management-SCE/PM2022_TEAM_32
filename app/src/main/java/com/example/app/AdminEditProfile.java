@@ -38,9 +38,9 @@ public class AdminEditProfile extends AppCompatActivity {
         setContentView(R.layout.admin_edit_profile);
 
         //for moving current admin data to -> edit profile fields
-        Intent data = getIntent();
-        String userName = data.getStringExtra("userName");
-        String email = data.getStringExtra("email");
+//        Intent data = getIntent();
+//        String userName = data.getStringExtra("userName");
+//        String email = data.getStringExtra("email");
 
         img = findViewById(R.id.admin_icon);
         EditAdminUserName = findViewById(R.id.edit_adm_username);
@@ -50,8 +50,8 @@ public class AdminEditProfile extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         adm = fAuth.getCurrentUser();
 
-        EditAdminUserName.setText(userName);
-        EditAdminEmail.setText(email);
+//        EditAdminUserName.setText(userName);
+//        EditAdminEmail.setText(email);
 
         //save changes button
         save.setOnClickListener(new View.OnClickListener() {
