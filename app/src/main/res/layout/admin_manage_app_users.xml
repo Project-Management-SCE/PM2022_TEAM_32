@@ -65,7 +65,7 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:visibility="visible"
-                    app:backgroundTint="#673f72" />
+                    app:backgroundTint="@color/design_default_color_error" />
 
                 <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
