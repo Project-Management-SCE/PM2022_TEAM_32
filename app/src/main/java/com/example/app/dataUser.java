@@ -6,6 +6,7 @@ public class dataUser {
     private String time;
     private String date;
     private String name;
+    private String id;
 
 
     //Constructors
@@ -16,6 +17,7 @@ public class dataUser {
         this.time = time;
         this.date = date;
         this.name = name;
+        this.id = "";
     }
 
     //Getters and Setters
@@ -49,6 +51,9 @@ public class dataUser {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public String getID() { return id; }
+    public void setID(String id_p) { this.id = id_p; }
 
 
 }

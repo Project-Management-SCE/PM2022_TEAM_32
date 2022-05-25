@@ -24,6 +24,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
+
                 <Button
                     android:id="@+id/users_button"
                     android:layout_width="180dp"
@@ -47,6 +48,20 @@
                     android:background="@drawable/rounded_corner"
                     android:fontFamily="@font/suez_one"
                     android:text="Mikveh Owners"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    app:backgroundTint="#673f72" />
+
+                <Button
+                    android:id="@+id/mikveh_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/suez_one"
+                    android:text="Mikveh List"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:visibility="visible"
