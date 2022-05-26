@@ -44,9 +44,7 @@ public class ContactUs extends AppCompatActivity {
     FirebaseAuth fAuth;
     Context context;
     AlertDialog builderAlert;
-
     FirebaseFirestore fstore;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

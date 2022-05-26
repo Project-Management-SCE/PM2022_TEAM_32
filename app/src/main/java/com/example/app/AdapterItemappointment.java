@@ -52,14 +52,15 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
         time.setText(data_model.getTime());
 
 
-//        listitemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // on the item click on our list view.
-//                // we are displaying a toast message.
-//                //Toast.makeText(getContext(), "Item clicked is : " + data_user.getUsername(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
+        delete.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                data_model.setVisibility(View.VISIBLE);
+           return true;
+            }
+        });
+
         return listitemView;
 
     }

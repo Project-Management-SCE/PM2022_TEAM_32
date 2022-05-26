@@ -73,7 +73,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         getMenuInflater().inflate(R.menu.user_menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -83,7 +82,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
                 return true;
             case R.id.item2:
                 userMeetings();
-
             case R.id.item3:
                 contactus();
                 return true;
