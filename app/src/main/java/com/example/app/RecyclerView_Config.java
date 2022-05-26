@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,6 +43,11 @@ public class RecyclerView_Config {
         private TextView mCity;
         private TextView mNeighbor;
 
+        //Rating layout
+        private TextView totalRate_header;
+        private TextView totalNum;
+        private RatingBar totalRatingBar;
+
         private String mReligious_Council;
         private String mOpening_Hours_Summer;
         private String mPhone;
@@ -60,6 +68,16 @@ public class RecyclerView_Config {
             mCity = (TextView) itemView.findViewById(R.id.city_txtView);
             mNeighbor = (TextView) itemView.findViewById(R.id.neighbor_txtView);
 
+            totalRate_header = (TextView)itemView.findViewById(R.id.total_rate);
+            totalNum = (TextView)itemView.findViewById(R.id.total_sum);
+            totalRatingBar = (RatingBar)itemView.findViewById(R.id.ratingBar);
+
+            totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                    totalNum.setText(Float.toString(v));
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -129,6 +147,12 @@ public class RecyclerView_Config {
                     });
                 }
             });
+        }
+
+        public void rateSubmit(View view) {
+            String ratingValue = String.valueOf(totalRatingBar.getRating()); //"5.0"
+            totalNum.setText(ratingValue);
+            //Toast.makeText(RecyclerView_Config.this, "Rate: " + ratingValue, Toast.LENGTH_LONG).show();
         }
 
         public void bind(Mikveh mikveh, String key) {

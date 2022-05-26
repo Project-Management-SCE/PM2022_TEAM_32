@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--Text view for displaying our text -->
         <ScrollView
             android:id="@+id/scroll_view"
             android:layout_width="match_parent"
@@ -32,14 +31,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name "
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/meetingAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Address "
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/meetingCity"
@@ -47,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="City "
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp"/>
 
 
         <TextView
@@ -55,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="date " />
+            android:text="date "
+            android:textSize="15sp"/>
 
 
         <TextView
@@ -63,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Time "/>
+            android:text="Time "
+            android:textSize="15sp"/>
 
         <ImageButton
             android:id="@+id/imageView"

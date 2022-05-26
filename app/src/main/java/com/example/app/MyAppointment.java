@@ -9,7 +9,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.FileObserver;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -72,6 +71,7 @@ public class MyAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointment);
+
         TVheader = findViewById(R.id.txt_myapp);
         TVaddress = findViewById(R.id.meetingAddress);
         TVcity = findViewById(R.id.meetingCity);
@@ -87,11 +87,10 @@ public class MyAppointment extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         meetingID = fAuth.getUid();
-
         userID = fAuth.getCurrentUser().getUid();
+
         fStore = FirebaseFirestore.getInstance();
         CollectionReference collRef = fStore.collection("Users").document(userID).collection("Appointments");
-        DocumentReference Ref = collRef.document(userID);
         collRef.document(meetingID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -103,7 +102,6 @@ public class MyAppointment extends AppCompatActivity {
                         TVcity.setText(doc.getString("city"));
                         TVdate.setText(doc.getString("date"));
                         TVtime.setText(doc.getString("time"));
-                        Ref.update("delete", Ref.delete());
                     }
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
@@ -111,34 +109,6 @@ public class MyAppointment extends AppCompatActivity {
             }
         });
 
-//        bulletinRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                        TVname.setText(document.getString("name"));
-//                        TVaddress.setText(document.getString("address"));
-//                        TVcity.setText(document.getString("city"));
-//                        TVdate.setText(document.getString("date"));
-//                        TVtime.setText(document.getString("time"));
-//                    }
-//                } else {
-//                    Log.d(TAG, "Error getting documents: ", task.getException());
-//                }
-//            }
-//        });
-
-//        DocumentReference docRef = fStore.collection("Users").document(userID).collection("Appointments").document(meetingID);
-//        docRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-//                TVname.setText(documentSnapshot.getString("name"));
-//                TVaddress.setText(documentSnapshot.getString("address"));
-//                TVcity.setText(documentSnapshot.getString("city"));
-//                TVdate.setText(documentSnapshot.getString("date"));
-//                TVtime.setText(documentSnapshot.getString("time"));
-//            }
-//        });
 
         buttn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,9 +122,7 @@ public class MyAppointment extends AppCompatActivity {
 
     private void loadData() {
         meetingsList.setVisibility(View.VISIBLE);
-
         fStore.collection("Users").document(userID).collection("Appointments").get()
-
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -166,10 +134,10 @@ public class MyAppointment extends AppCompatActivity {
                             }
                             // after that we are passing our array list to our adapter class.
                             AdapterItemAppointment adapter = new AdapterItemAppointment(MyAppointment.this, dataArrayList);
+
                             // after passing this array list to our adapter
                             // class we are setting our adapter to our list view.
                             meetingsList.setAdapter(adapter);
-
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
                             Toast.makeText(MyAppointment.this, "No data found in Database", Toast.LENGTH_SHORT).show();
@@ -182,6 +150,8 @@ public class MyAppointment extends AppCompatActivity {
                 // when we get any error from Firebase.
                 Toast.makeText(MyAppointment.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
             }
+
         });
+
     }
 }

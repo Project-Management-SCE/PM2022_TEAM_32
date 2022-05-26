@@ -16,11 +16,13 @@ pipeline {
                 sh 'chmod +x gradlew && ./gradlew --no-daemon --stacktrace clean'                
             }
         }
+        
         /* Unit tests */
         stage('Test') {
-            steps {           
-                sh './gradlew test'
-            }
+                steps {      
+                    sh './gradlew test'
+                    junit '**/build/test-results/**/TEST-*.xml'
+                 } 
         }
         
         /* Build the apk file */

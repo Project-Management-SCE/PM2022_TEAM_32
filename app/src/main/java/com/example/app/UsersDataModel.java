@@ -1,10 +1,8 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 public class UsersDataModel {
 
-    String email, userName, profile;
+    String email, userName, profile, id;
 
     //empty constructor required for firebase
     public UsersDataModel() {}
@@ -14,9 +12,11 @@ public class UsersDataModel {
         this.email = email;
         this.userName = userName;
         this.profile = profile;
+        this.id = "";
     }
 
     //getter and setter methods
+
     public String getEmail() {
         return email;
     }
@@ -36,5 +36,12 @@ public class UsersDataModel {
     }
     public void setProfile(String profile) {
         this.profile = profile;
+    }
+
+    public String getID() {
+        return id;
+    }
+    public void setID(String id_p) {
+        this.id = id_p;
     }
 }

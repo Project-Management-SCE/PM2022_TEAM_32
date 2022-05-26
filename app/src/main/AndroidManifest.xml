@@ -12,12 +12,6 @@
         android:label="Mikveh Point"
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
-
-
-
-        <activity
-            android:name=".ContactUs"
-            android:exported="false" />
         <activity
             android:name=".MikvehDetailsActivity"
             android:exported="false" />

@@ -1,6 +1,8 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +15,35 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
+
+    FirebaseFirestore db;
 
     // constructor for our list view adapter.
     public AdapterItemAppointment(@NonNull Context context, ArrayList<dataUser> dataArrayList) {
         super(context, 0, dataArrayList);
+        db = FirebaseFirestore.getInstance();
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // below line is use to inflate the
-        // layout for our item of list view.
         View listitemView = convertView;
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.item_layout, parent, false);
@@ -42,25 +59,34 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
         TextView time = listitemView.findViewById(R.id.txt_time_item);
         ImageButton delete = listitemView.findViewById(R.id.imageView);
 
-        // after initializing our items we are
-        // setting data to our view.
-        // below line is use to set data to our text view.
         name.setText(data_model.getName());
         address.setText(data_model.getAddress());
         city.setText(data_model.getCity());
         date.setText(data_model.getDate());
         time.setText(data_model.getTime());
 
+        delete.setOnClickListener(new View.OnClickListener() {
 
-
-        delete.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                data_model.setVisibility(View.VISIBLE);
-           return true;
-            }
-        });
+            public void onClick(View view) {
+                db.collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .collection("Appointments").document(data_model.getID()).delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d("Meeting has been removed.", "Meeting has been removed.");
+                                Toast.makeText(getContext(), "Appointments successfully deleted", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d("Error!", "");
+                            }
+                        });
 
+                }
+        });
         return listitemView;
 
     }

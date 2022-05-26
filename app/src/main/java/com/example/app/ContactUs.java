@@ -55,7 +55,7 @@ public class ContactUs extends AppCompatActivity {
         usernameVIEW = findViewById(R.id.username_view);
         emailVIEW = findViewById(R.id.useremail_view);
         send = findViewById(R.id.send_button);
-        contctus = findViewById(R.id.content_et);
+        contctus = findViewById(R.id.content_et); 
 
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
