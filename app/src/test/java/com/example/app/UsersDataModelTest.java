@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class UsersDataModelTest {
 
-    UsersDataModel user_data_model = new UsersDataModel("test@gmail.com", "Test", "User", "id");
+    UsersDataModel user_data_model = new UsersDataModel("test@gmail.com", "Test", "User");
 
     @Test
     public void getEmail() {

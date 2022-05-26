@@ -8,11 +8,11 @@ public class UsersDataModel {
     public UsersDataModel() {}
 
     //constructor for our object class.
-    public UsersDataModel(String email, String userName, String profile, String id) {
+    public UsersDataModel(String email, String userName, String profile) {
         this.email = email;
         this.userName = userName;
         this.profile = profile;
-        this.id = id;
+        this.id = "";
     }
 
     //getter and setter methods
