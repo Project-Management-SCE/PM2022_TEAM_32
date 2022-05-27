@@ -30,8 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
-            android:hint="Your User Name"
-            android:minHeight="48dp" />
+            android:hint="Your User Name" />
 
 
         <EditText
@@ -39,11 +38,10 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Your Email Address "
-            android:minHeight="48dp" />
+            android:hint="Your Email Address " />
 
         <Button
-            android:id="@+id/save_changes_button"
+            android:id="@+id/save_changes"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -113,6 +113,8 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getContext(), "User deleted successfully", Toast.LENGTH_SHORT).show();
+                        remove(dataModal);
+                        notifyDataSetChanged();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -125,16 +127,6 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
             }
         });
 
-//        listitemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // on the item click on our list view.
-//                // we are displaying a toast message.
-//                Toast.makeText(getContext(), "Item clicked is : " + dataModal.getUsername(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
         return listitemView;
-
     }
-
 }

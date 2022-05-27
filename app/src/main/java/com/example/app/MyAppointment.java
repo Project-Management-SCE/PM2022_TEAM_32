@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -63,7 +64,7 @@ public class MyAppointment extends AppCompatActivity {
     ArrayList<dataUser> dataArrayList;
 
     TextView TVheader, TVaddress, TVcity, TVdate, TVtime, TVname;
-    Button buttn;
+    Button buttn, buttn2;
     ImageButton delete;
 
 
@@ -81,6 +82,7 @@ public class MyAppointment extends AppCompatActivity {
         delete = findViewById(R.id.imageView);
 
         buttn = findViewById(R.id.button);
+        buttn2 = findViewById(R.id.button2);
 
         meetingsList = findViewById(R.id.meetingsList);
         dataArrayList = new ArrayList<>();
@@ -117,6 +119,13 @@ public class MyAppointment extends AppCompatActivity {
             }
         });
 
+        buttn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MyAppointment.this, UserMenuAppActivity.class));
+            }
+        });
+
     }
 
 
@@ -129,7 +138,9 @@ public class MyAppointment extends AppCompatActivity {
                         if (!queryDocumentSnapshots.isEmpty()) {
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                             for (DocumentSnapshot d : list) {
+                                String key = d.getId();
                                 dataUser data_user = d.toObject(dataUser.class);
+                                data_user.setID(key);
                                 dataArrayList.add(data_user);
                             }
                             // after that we are passing our array list to our adapter class.
@@ -138,20 +149,20 @@ public class MyAppointment extends AppCompatActivity {
                             // after passing this array list to our adapter
                             // class we are setting our adapter to our list view.
                             meetingsList.setAdapter(adapter);
+                            //adapter.notifyDataSetChanged();
+
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
                             Toast.makeText(MyAppointment.this, "No data found in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // we are displaying a toast message
-                // when we get any error from Firebase.
-                Toast.makeText(MyAppointment.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-    }
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                    // we are displaying a toast message
+                    // when we get any error from Firebase.
+                        Toast.makeText(MyAppointment.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        }
 }

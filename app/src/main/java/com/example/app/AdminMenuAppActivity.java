@@ -56,15 +56,7 @@ public class AdminMenuAppActivity extends AppCompatActivity {
                 return true;
 
             case R.id.item2:
-                admManage();
-                return true;
-
-//            case R.id.item3:
-//                //settings
-//                return true;
-
-            case R.id.item4:
-                logout();
+                logout();;
                 return true;
 
             default:
@@ -83,7 +75,7 @@ public class AdminMenuAppActivity extends AppCompatActivity {
 
     public void logout() {
         FirebaseAuth.getInstance().signOut();//logout
-        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
         finish();
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
     }
 }

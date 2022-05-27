@@ -2,20 +2,29 @@ package com.example.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -26,10 +35,14 @@ public class AdminManageAppUsers extends AppCompatActivity {
     ListView usersList;
     ScrollView sv;
     Button usersButton, ownersButton, mListMikveh;
+    TextView admin_menu_header, currAdmUsername, tollbarTitle;
     ImageButton delete;
     ArrayList<UsersDataModel> dataModalArrayList;
-    FirebaseFirestore db;
     String choice;
+
+    String userID;
+    FirebaseFirestore db;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +52,31 @@ public class AdminManageAppUsers extends AppCompatActivity {
         // below line is use to initialize our variables
         usersList = findViewById(R.id.usersList);
         sv = findViewById(R.id.scroll_view);
+        admin_menu_header = findViewById(R.id.admin_menu_header);
+        currAdmUsername = findViewById(R.id.myAdmUsername);
+        tollbarTitle = findViewById(R.id.toolbar_title);
         usersButton = findViewById(R.id.users_button);
         ownersButton = findViewById(R.id.owners_button);
         mListMikveh = findViewById(R.id.mikveh_button);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tollbarTitle = findViewById(R.id.toolbar_title);
+        setSupportActionBar(toolbar);
+
         dataModalArrayList = new ArrayList<>();
+
         db = FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+
+        //Get the current username login for header title
+        DocumentReference documentReference = db.collection("Users").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                currAdmUsername.setText(documentSnapshot.getString("userName"));
+            }
+        });
 
         // here we are calling a method
         // to load data in our list view.
@@ -72,7 +104,9 @@ public class AdminManageAppUsers extends AppCompatActivity {
         });
     }
 
+
     private void loadDatainListview(String choice) {
+        admin_menu_header.setVisibility(View.GONE);
         usersButton.setVisibility(View.GONE);
         ownersButton.setVisibility(View.GONE);
         usersList.setVisibility(View.VISIBLE);
@@ -116,5 +150,38 @@ public class AdminManageAppUsers extends AppCompatActivity {
                 Toast.makeText(AdminManageAppUsers.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.admin_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.item1:
+                adminData();
+                return true;
+
+            case R.id.item2:
+                logout();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void adminData() {
+        startActivity(new Intent(AdminManageAppUsers.this, AdminProfile.class));
+    }
+
+    public void logout() {
+        finish();
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
     }
 }

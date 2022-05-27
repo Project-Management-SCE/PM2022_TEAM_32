@@ -480,5 +480,7 @@
     <string name="back">BACK</string>
     <string name="button">Button</string>
     <string name="show_my_upcoming_meetings">Show My Upcoming Meetings</string>
+    <string name="create_new_meeting">Create new meeting</string>
+    <string name="close">Close</string>
 
 </resources>
