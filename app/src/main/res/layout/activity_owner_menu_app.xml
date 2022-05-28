@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckground"
+    android:background="@drawable/white_wallpaper"
     android:fitsSystemWindows="true"
     tools:context=".OwnerMenuAppActivity">
 
@@ -26,13 +27,25 @@
             android:id="@+id/own_add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ADD MIKVEH" />
+            android:layout_marginTop="15dp"
+            android:text="@string/add_mikveh"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/suez_one"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="@color/purple_200"/>
 
         <Button
             android:id="@+id/own_list_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MIKVEH LIST" />
+            android:layout_marginTop="15dp"
+            android:text="@string/my_mikveh_list"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/suez_one"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="@color/purple_200"/>
 
         <TextView
             android:id="@+id/admin_menu_header"
@@ -54,19 +67,10 @@
             android:text="@string/upcoming_appoitments"
             android:textAlignment="center"
             android:textColor="#87666b"
-            android:textSize="25dp">
+            android:textSize="25sp">
 
         </TextView>
 
-        <CalendarView
-            android:id="@+id/owner_calendar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true">
-
-        </CalendarView>
-
 
     </LinearLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

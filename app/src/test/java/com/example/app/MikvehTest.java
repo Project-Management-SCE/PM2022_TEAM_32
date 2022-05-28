@@ -18,6 +18,7 @@ public class MikvehTest {
             "Nothing",
             "",
             "Very clean and comfortable",
+            "",
             "");
     @Test
     public void getReligious_Council() {
