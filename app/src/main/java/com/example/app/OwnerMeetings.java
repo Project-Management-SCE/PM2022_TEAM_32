@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class OwnerMeetings extends AppCompatActivity {
     TextView TVheader, TVaddress, TVcity, TVdate, TVtime, TVname;
     EditText chooseDate;
     Button dateButton, select;
+    ImageView calendarImage;
     ListView OwnerMeetingsList;
     ArrayList<dataUser> dataArrayList;
     String ownerID, meetingID;
@@ -51,6 +53,7 @@ public class OwnerMeetings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_meetings);
 
+        calendarImage = findViewById(R.id.imageView3);
         select = findViewById(R.id.select_button);
         dateButton = findViewById(R.id.dateButton);
         OwnerMeetingsList = findViewById(R.id.ownerMikvehList);

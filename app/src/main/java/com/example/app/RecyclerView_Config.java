@@ -45,9 +45,9 @@ public class RecyclerView_Config {
         private TextView mNeighbor;
 
         //Rating layout
-//        private TextView totalRate_header;
-//        private TextView totalRatingNumber;
-//        private RatingBar totalRatingBar;
+        private TextView totalRate_header;
+        private TextView totalRatingNumber;
+        private RatingBar totalRatingBar;
 
         private String mReligious_Council;
         private String mOpening_Hours_Summer;
@@ -70,9 +70,9 @@ public class RecyclerView_Config {
             mCity = (TextView) itemView.findViewById(R.id.city_txtView);
             mNeighbor = (TextView) itemView.findViewById(R.id.neighbor_txtView);
 
-//            totalRate_header = (TextView)itemView.findViewById(R.id.total_rate);
-//            totalRatingNumber = (TextView)itemView.findViewById(R.id.total_rate_number);
-//            totalRatingBar = (RatingBar)itemView.findViewById(R.id.ratingBar);
+            totalRate_header = (TextView)itemView.findViewById(R.id.total_rate);
+            totalRatingNumber = (TextView)itemView.findViewById(R.id.total_rate_number);
+            totalRatingBar = (RatingBar)itemView.findViewById(R.id.ratingBar);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -153,23 +153,23 @@ public class RecyclerView_Config {
             mNeighbor.setText(mikveh.getNeighborhood());
 
             //Display the current mikveh totalRate
-//            totalRate = mikveh.getTotalRate();
-//            float f = Float.parseFloat(totalRate);
-//            totalRatingNumber.setText(totalRate);
-//            totalRatingBar.setRating(f);
+            totalRate = mikveh.getTotalRate();
+            float f = Float.parseFloat(totalRate);
+            totalRatingNumber.setText(totalRate);
+            totalRatingBar.setRating(f);
 
 
 
             //When user click on the stars for rating
-//            totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//                @Override
-//                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-//                    mikveh.setTotalRate(String.valueOf(v));
-//                    totalRate = mikveh.getTotalRate();
-//                    totalRatingNumber.setText(totalRate);
-//                    totalRatingBar.setRating(v);
-//                }
-//            });
+            totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                    mikveh.setTotalRate(String.valueOf(v));
+                    totalRate = mikveh.getTotalRate();
+                    totalRatingNumber.setText(totalRate);
+                    totalRatingBar.setRating(v);
+                }
+            });
 
             this.key = key;
 
