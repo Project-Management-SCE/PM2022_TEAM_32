@@ -12,17 +12,25 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class UserMenuAppActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView user_menu_header, textView_user_menu, tollbarTitle;
+    TextView user_menu_header, currentUsername, textView_user_menu, tollbarTitle;
     Spinner spinner;
     Button select_city_button;
     FirebaseAuth fAuth;
+    String userID;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +38,23 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_user_menu_app);
 
         user_menu_header = findViewById(R.id.admin_menu_header);
+        currentUsername = findViewById(R.id.myUsername);
         textView_user_menu = findViewById(R.id.text_user_menu);
         spinner = findViewById(R.id.city_spinner);
         select_city_button = findViewById(R.id.select_button);
+
         fAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+
+        //Get the current username login for header title
+        DocumentReference documentReference = db.collection("Users").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                currentUsername.setText(documentSnapshot.getString("userName"));
+            }
+        });
 
         //user menu has been clicked
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -59,9 +80,6 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
 
                 //Toast.makeText(UserMenuAppActivity.this, "Chosen city: " + userCityChoice , Toast.LENGTH_SHORT).show();//printing user choice
 
-
-
-
             }
         });
     }
@@ -85,6 +103,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
                 userMeetings();
                 return true;
             case R.id.item3:
+                contactUs();
+                return true;
+            case R.id.item4:
                 logout();
                 return true;
             default:
@@ -100,10 +121,14 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         startActivity(new Intent(UserMenuAppActivity.this, MyAppointment.class));
     }
 
+    public void contactUs() {
+        startActivity(new Intent(UserMenuAppActivity.this, ContactWithUs.class));
+    }
+
     public void logout() {
+        finish();
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-        finish();
     }
 
     @Override

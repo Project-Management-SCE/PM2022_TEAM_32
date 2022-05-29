@@ -34,7 +34,7 @@ public class AdminProfile extends AppCompatActivity {
     Button editProfile, resetPassword, goBack, logout;
     String adminID;
     FirebaseAuth fAuth;
-    FirebaseFirestore fstore;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +55,10 @@ public class AdminProfile extends AppCompatActivity {
         logout = findViewById(R.id.logout_button);
 
         fAuth = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
+        fStore = FirebaseFirestore.getInstance();
         adminID = fAuth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = fstore.collection("Users").document(adminID);
+        DocumentReference documentReference = fStore.collection("Users").document(adminID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -72,10 +72,10 @@ public class AdminProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminProfile.this, AdminEditProfile.class));
-//                Intent i = new Intent(AdminProfile.this, AdminEditProfile.class);
-//                i.putExtra("userName", admUsernameVIEW.getText().toString());
-//                i.putExtra("email", admEmailVIEW.getText().toString());
-//                startActivity(i);
+                Intent x = new Intent(AdminProfile.this, AdminEditProfile.class);
+                x.putExtra("userName", admUsernameVIEW.getText().toString());
+                x.putExtra("email", admEmailVIEW.getText().toString());
+                startActivity(x);
             }
         });
 
@@ -123,7 +123,7 @@ public class AdminProfile extends AppCompatActivity {
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminProfile.this, AdminMenuAppActivity.class));
+                startActivity(new Intent(AdminProfile.this, AdminManageAppUsers.class));
             }
         });
 

@@ -83,7 +83,7 @@
             app:layout_constraintTop_toTopOf="@+id/ratingBar2" />
 
         <TextView
-            android:id="@+id/total_sum"
+            android:id="@+id/total_rate_number"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity=""

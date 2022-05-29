@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class OwnerMenuAppActivity extends AppCompatActivity {
 
     TextView owner_menu_header, owner_menu_text, tollbarTitle;
-    CalendarView calendar;
     private Button mAddMikveh;
     private Button mListMikveh;
 
@@ -29,7 +28,6 @@ public class OwnerMenuAppActivity extends AppCompatActivity {
         owner_menu_header = findViewById(R.id.admin_menu_header);
         owner_menu_text = findViewById(R.id.owner_menu_text);
         tollbarTitle = findViewById(R.id.toolbar_title);
-        calendar = findViewById(R.id.owner_calendar);
         mAddMikveh = (Button) findViewById(R.id.own_add_btn);
         mListMikveh = (Button) findViewById(R.id.own_list_btn);
 
@@ -63,22 +61,42 @@ public class OwnerMenuAppActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.owner_profile:
+            case R.id.item1:
                 //owner profile
-
-
                 return true;
-            case R.id.owner_appo:
+
+            case R.id.item2:
                 //mikvehowner scheduling
 
-
                 return true;
-            case R.id.owner_logoff:
-                FirebaseAuth.getInstance().signOut();//logout
-                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
-                finish();
+
+            case R.id.item3:
+                contactUs();
+                return true;
+
+            case R.id.item4:
+                logout();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+//    public void userData() {
+//        startActivity(new Intent(UserMenuAppActivity.this, UserProfile.class));
+////    }
+//
+//    public void userMeetings() {
+//        startActivity(new Intent(UserMenuAppActivity.this, MyAppointment.class));
+//    }
+
+    public void contactUs() {
+        startActivity(new Intent(OwnerMenuAppActivity.this, ContactWithUs.class));
+    }
+
+    public void logout() {
+        finish();
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),SignInActivity.class));
     }
 }

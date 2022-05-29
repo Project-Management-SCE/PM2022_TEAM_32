@@ -42,6 +42,19 @@
             android:textSize="18sp"
             app:backgroundTint="@color/purple_200"/>
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/suez_one"
+            android:text="@string/create_new_meeting"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="#9C27B0" />
+
 </LinearLayout>
 
 

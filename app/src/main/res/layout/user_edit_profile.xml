@@ -48,7 +48,7 @@
             android:background="@drawable/rounded_corner"
             android:fontFamily="@font/suez_one"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:backgroundTint="#00ff8c" />
 
     </LinearLayout>

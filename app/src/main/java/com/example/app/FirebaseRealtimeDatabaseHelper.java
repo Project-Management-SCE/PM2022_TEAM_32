@@ -91,7 +91,6 @@ public class FirebaseRealtimeDatabaseHelper {
             mReference.orderByChild("city").equalTo(city).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Log.d("Query", snapshot.getValue().toString());
                 Mikveh mikveh = snapshot.getValue(Mikveh.class);
                 mikvot.add(mikveh);
                 keys.add(snapshot.getKey());

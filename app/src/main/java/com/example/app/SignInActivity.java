@@ -34,7 +34,6 @@ public class SignInActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
-//    String userID, profile;
 
 
     @Override
@@ -77,6 +76,7 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            user = fAuth.getCurrentUser();
                             DocumentReference docRef = fStore.collection("Users").document(user.getUid());
                             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override

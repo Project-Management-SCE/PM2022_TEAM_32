@@ -480,5 +480,14 @@
     <string name="back">BACK</string>
     <string name="button">Button</string>
     <string name="show_my_upcoming_meetings">Show My Upcoming Meetings</string>
+    <string name="create_new_meeting">Create new meeting</string>
+    <string name="close">Close</string>
+    <string name="my_mikveh_list">My Mikveh List</string>
+    <string name="add_mikveh">Add Mikveh</string>
+    <string name="delete">DELETE</string>
+    <string name="update">UPDATE</string>
+    <string name="schedule_appointment">Schedule Appointment</string>
+    <string name="goback">GoBack</string>
+    <string name="contact_us">Contact Us</string>
 
 </resources>

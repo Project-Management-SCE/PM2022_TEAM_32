@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/white_wallpaper"
-    tools:context=".ContactUs" >
+    tools:context=".UserProfile" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,10 +84,8 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/content_et"
                     android:layout_width="match_parent"
                     android:layout_height="167dp"
-                    android:background="#CBE9F6"
                     android:textAlignment="center"
                     android:textSize="16sp" />
 
