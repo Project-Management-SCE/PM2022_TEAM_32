@@ -6,7 +6,7 @@ plugins {
 
 android {
     compileSdk 31
-    buildToolsVersion '32.0.0'
+    buildToolsVersion '32.1.0-rc1'
 
     defaultConfig {
         applicationId "com.example.app"
@@ -14,7 +14,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        //***Testing***
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,8 +24,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -33,12 +31,38 @@ android {
     buildFeatures {
         viewBinding true
     }
+    //***Testing***
+    packagingOptions { //?- When pb "A failure occurred while executing com.android.build.gradle.internal.tasks.MergeJavaResWorkAction > 6 files found with path 'META-INF/LICENSE.md' from inputs:"
+        pickFirst 'META-INF/DEPENDENCIES'
+        pickFirst 'META-INF/LICENSE'
+        pickFirst 'META-INF/LICENSE.md'
+        pickFirst 'META-INF/LICENSE-notice.md'
+        pickFirst 'META-INF/LICENSE.txt'
+        pickFirst 'META-INF/license.txt'
+        pickFirst 'META-INF/NOTICE'
+        pickFirst 'META-INF/NOTICE.txt'
+        pickFirst 'META-INF/notice.txt'
+        pickFirst 'META-INF/ASL2.0'
+        pickFirst("META-INF/*.kotlin_module")
+        //Robolectric Test?
+            //pickFirst 'licenses/javolution.license.TXT'
+            //pickFirst 'META-INF/plexus/components.xml'
+    }
+
+    //***Testing***
+    testOptions {
+        unitTests  {
+            includeAndroidResources = true
+        }
+        unitTests.all {
+            systemProperty 'robolectric.enabledSdks', '29'
+        }
+    }
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'com.google.firebase:firebase-analytics:20.1.2'
     implementation 'com.google.firebase:firebase-firestore:24.1.1'
@@ -48,11 +72,18 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
-
-    //Unit test
+    //***Testing***
+    //implementation fileTree(dir: 'libs', include: ['*.jar']) //Robolectric Test?
+    //implementation 'com.android.support:multidex:1.0.3' //Robolectric Test?
+    implementation 'androidx.test:core:1.4.0'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.robolectric:robolectric:4.8'
+    androidTestImplementation 'org.robolectric:robolectric:4.8'
     androidTestImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }

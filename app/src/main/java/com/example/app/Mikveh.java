@@ -1,5 +1,13 @@
 package com.example.app;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class Mikveh {
     private String Religious_Council;
     private String City;
@@ -14,6 +22,8 @@ public class Mikveh {
     private String Accessibility;
     private String Schedule_Appointment;
     private String Notes;
+    private String zip;
+    private Geocoder geocoder;
 
     public Mikveh() {
         Religious_Council = "";
@@ -145,5 +155,14 @@ public class Mikveh {
 
     public void setNotes(String notes) {
         Notes = notes;
+    }
+
+    public void geoUtils(Context ctx) {
+        geocoder = new Geocoder(ctx, Locale.getDefault());
+    }
+
+    public String getCurrentZipCode(double lat, double lng) throws IOException {
+        List<Address> addressesAtLocation = geocoder.getFromLocation(lat, lng, 1);
+        return addressesAtLocation.get(0).getPostalCode();
     }
 }
