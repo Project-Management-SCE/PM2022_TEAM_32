@@ -11,7 +11,7 @@ public class dataUser {
 
     //Constructors
     public dataUser() {}
-    public dataUser(String address, String city, String time, String date, String name) {
+    public dataUser(String address, String city, String time, String date, String name, String id) {
         this.address = address;
         this.city = city;
         this.time = time;
