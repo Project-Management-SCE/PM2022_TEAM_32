@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +41,8 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
+        FirebaseApp.initializeApp(SignInActivity.this);
+
         setContentView(R.layout.activity_sign_in);
 
         LoginButn = findViewById(R.id.email_sign_in_button);
@@ -57,11 +60,11 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                String email = eMail.getText().toString().trim();
-//                String password = Password.getText().toString().trim();
+                String email = eMail.getText().toString().trim();
+                String password = Password.getText().toString().trim();
 
-                String email = "adam370@hotmail.fr";
-                String password = "secret";
+//                String email = "adam370@hotmail.fr";
+//                String password = "secret";
 
                 if (TextUtils.isEmpty(email)) {
                     eMail.setError("Email is Required.");
