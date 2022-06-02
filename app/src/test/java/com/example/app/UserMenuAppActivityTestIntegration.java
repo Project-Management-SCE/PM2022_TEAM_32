@@ -19,6 +19,7 @@ public class UserMenuAppActivityTestIntegration {
     public void clickingAddMikveh() {
         SignInActivity activityB = Robolectric.setupActivity(SignInActivity.class);
 
+        //Shadows.shadowOf(Looper.getMainLooper()).idle();
         UserMenuAppActivity activity = Robolectric.setupActivity(UserMenuAppActivity.class);
         activity.findViewById(R.id.select_button).performClick();
 

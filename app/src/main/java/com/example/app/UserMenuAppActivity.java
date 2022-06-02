@@ -35,6 +35,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //FirebaseApp.initializeApp(UserMenuAppActivity.this);
         setContentView(R.layout.activity_user_menu_app);
 
         user_menu_header = findViewById(R.id.admin_menu_header);
@@ -52,6 +53,7 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+//                currentUsername.setText(documentSnapshot.getString("userName"));
                 currentUsername.setText(documentSnapshot.getString("userName"));
             }
         });
