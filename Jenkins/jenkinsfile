@@ -39,7 +39,15 @@ pipeline {
             }
         }
         
+    }
+    post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "michaelazriel340@gmail.com",
+            sendToIndividuals: true])
         }
+    }
 }
 
 
