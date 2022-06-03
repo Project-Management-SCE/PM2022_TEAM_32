@@ -42,7 +42,7 @@ pipeline {
         }
         post{
             always{
-                mail to: "michaelazriel340@gmail.com",
+                mail to: "victosol22@gmail.com",
                 subject: "Test Email",
                 body: "Test"
             }
