@@ -153,7 +153,7 @@ public class RecyclerView_Config {
             mNeighbor.setText(mikveh.getNeighborhood());
 
             //Display the current mikveh totalRate
-            totalRate = mikveh.getTotalRate();
+            //totalRate = mikveh.getTotalRate();
             float f = Float.parseFloat(totalRate);
             totalRatingNumber.setText(totalRate);
             totalRatingBar.setRating(f);
@@ -164,7 +164,7 @@ public class RecyclerView_Config {
             totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                    mikveh.setTotalRate(String.valueOf(v));
+                    //mikveh.setTotalRate(String.valueOf(v));
                     totalRate = mikveh.getTotalRate();
                     totalRatingNumber.setText(totalRate);
                     totalRatingBar.setRating(v);
