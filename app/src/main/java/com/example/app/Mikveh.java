@@ -24,6 +24,7 @@ public class Mikveh {
     private String Notes;
     private String zip;
     private Geocoder geocoder;
+    private String totalRate;
 
     public Mikveh() {
         Religious_Council = "";
@@ -39,9 +40,10 @@ public class Mikveh {
         Schedule_Appointment = "";
         Notes = "";
         Owner_ID = "";
+        totalRate = "";
     }
 
-    public Mikveh(String religious_Council, String city, String neighborhood, String mikve_Address, String phone, String opening_Hours_Summer, String opening_Hours_Winter, String opening_Hours_Holiday_Eve_Shabat_Eve, String opening_Hours_Saturday_Night_Good_Day, String accessibility, String schedule_Appointment, String notes, String owner_ID) {
+    public Mikveh(String religious_Council, String city, String neighborhood, String mikve_Address, String phone, String opening_Hours_Summer, String opening_Hours_Winter, String opening_Hours_Holiday_Eve_Shabat_Eve, String opening_Hours_Saturday_Night_Good_Day, String accessibility, String schedule_Appointment, String notes, String owner_ID, String total_rate) {
         Religious_Council = religious_Council;
         City = city;
         this.neighborhood = neighborhood;
@@ -55,6 +57,7 @@ public class Mikveh {
         Schedule_Appointment = schedule_Appointment;
         Notes = notes;
         Owner_ID = owner_ID;
+        totalRate = total_rate;
     }
 
     public String getReligious_Council() {
@@ -152,6 +155,9 @@ public class Mikveh {
     public String getNotes() {
         return Notes;
     }
+
+    public String getTotalRate() { return totalRate; }
+    public void setTotalRate(String total_Rate) { totalRate = total_Rate; }
 
     public void setNotes(String notes) {
         Notes = notes;
