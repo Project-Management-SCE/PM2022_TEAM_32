@@ -38,7 +38,6 @@ public class AdminManageAppUsers extends AppCompatActivity {
     TextView admin_menu_header, currAdmUsername, tollbarTitle;
     ImageButton delete;
     ArrayList<UsersDataModel> dataModalArrayList;
-    String choice;
 
     String userID;
     FirebaseFirestore db;
@@ -83,16 +82,14 @@ public class AdminManageAppUsers extends AppCompatActivity {
         usersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choice = "Users";
-                loadDatainListview(choice);
+                loadUsersDatainListview();
             }
         });
 
         ownersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choice = "Owner";
-                loadDatainListview(choice);
+                loadOwnersDatainListview();
             }
         });
 
@@ -105,7 +102,7 @@ public class AdminManageAppUsers extends AppCompatActivity {
     }
 
 
-    private void loadDatainListview(String choice) {
+    private void loadUsersDatainListview() {
         admin_menu_header.setVisibility(View.GONE);
         usersButton.setVisibility(View.GONE);
         ownersButton.setVisibility(View.GONE);
@@ -114,42 +111,65 @@ public class AdminManageAppUsers extends AppCompatActivity {
         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                // after getting the data we are calling on success method
-                // and inside this method we are checking if the received
-                // query snapshot is empty or not.
                 if (!queryDocumentSnapshots.isEmpty()) {
-                    // if the snapshot is not empty we are hiding
-                    // our progress bar and adding our data in a list.
                     List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                     for (DocumentSnapshot d : list) {
-                        // after getting this list we are passing
-                        // that list to our object class.
                         String key = d.getId();
                         UsersDataModel dataModal = d.toObject(UsersDataModel.class);
                         dataModal.setID(key);
-                        // after getting data from Firebase we are
-                        // storing that data in our array list
-                        dataModalArrayList.add(dataModal);
+                        final String str = dataModal.getProfile();
+                        if(str.equals("User")) {
+                            dataModalArrayList.add(dataModal);
+                        }
                     }
-                    // after that we are passing our array list to our adapter class.
                     UsersListAdapter adapter = new UsersListAdapter(AdminManageAppUsers.this, dataModalArrayList);
-
-                    // after passing this array list to our adapter
-                    // class we are setting our adapter to our list view.
                     usersList.setAdapter(adapter);
                 } else {
-                    // if the snapshot is empty we are displaying a toast message.
                     Toast.makeText(AdminManageAppUsers.this, "No data found in Database", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                // we are displaying a toast message
-                // when we get any error from Firebase.
                 Toast.makeText(AdminManageAppUsers.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    private void loadOwnersDatainListview() {
+        admin_menu_header.setVisibility(View.GONE);
+        usersButton.setVisibility(View.GONE);
+        ownersButton.setVisibility(View.GONE);
+        usersList.setVisibility(View.VISIBLE);
+        db.collection("Users").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                String key = d.getId();
+                                UsersDataModel dataModal = d.toObject(UsersDataModel.class);
+                                dataModal.setID(key);
+                                final String str = dataModal.getProfile();
+                                if(str.equals("Owner")) {
+                                    dataModalArrayList.add(dataModal);
+                                }
+                            }
+                            UsersListAdapter adapter = new UsersListAdapter(AdminManageAppUsers.this, dataModalArrayList);
+                            usersList.setAdapter(adapter);
+                        } else {
+                            Toast.makeText(AdminManageAppUsers.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AdminManageAppUsers.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -167,6 +187,11 @@ public class AdminManageAppUsers extends AppCompatActivity {
                 return true;
 
             case R.id.item2:
+                finish();
+                startActivity(new Intent(AdminManageAppUsers.this, AdminManageAppUsers.class));
+                return true;
+
+            case R.id.item3:
                 logout();
                 return true;
 

@@ -105,6 +105,9 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
                 userMeetings();
                 return true;
             case R.id.item3:
+                contactUs();
+                return true;
+            case R.id.item4:
                 logout();
                 return true;
             default:
@@ -118,6 +121,10 @@ public class UserMenuAppActivity extends AppCompatActivity implements AdapterVie
 
     public void userMeetings() {
         startActivity(new Intent(UserMenuAppActivity.this, MyAppointment.class));
+    }
+
+    public void contactUs() {
+        startActivity(new Intent(UserMenuAppActivity.this, ContactWithUs.class));
     }
 
     public void logout() {

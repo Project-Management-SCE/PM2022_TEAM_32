@@ -9,6 +9,10 @@
     </item>
     <item
         android:id="@+id/item2"
+        android:title="@string/goback">
+    </item>
+    <item
+        android:id="@+id/item3"
         android:title="@string/logout">
     </item>
 

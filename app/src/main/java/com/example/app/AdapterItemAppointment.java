@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,6 +35,9 @@ import java.util.Map;
 public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
 
     FirebaseFirestore db;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userProfile;
 
     // constructor for our list view adapter.
     public AdapterItemAppointment(@NonNull Context context, ArrayList<dataUser> dataArrayList) {
@@ -65,6 +69,10 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
         date.setText(data_model.getDate());
         time.setText(data_model.getTime());
 
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userProfile = fAuth.getCurrentUser().getUid();
+
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +93,25 @@ public class AdapterItemAppointment extends ArrayAdapter<dataUser> {
                                 Log.d("Error!", "");
                             }
                         });
-                }
+                db.collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .collection("UpcomingMeetings").document(data_model.getID()).delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d("Meeting has been removed.", "Meeting has been removed.");
+                                Toast.makeText(getContext(), "Appointments successfully deleted", Toast.LENGTH_SHORT).show();
+                                remove(data_model);
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d("Error!", "");
+                            }
+                        });
+            }
+
         });
         return listitemView;
 

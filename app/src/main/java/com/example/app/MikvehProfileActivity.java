@@ -220,12 +220,25 @@ public class MikvehProfileActivity extends AppCompatActivity {
 
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fStore.collection("Users").document(userID).collection("Appointments").document();
+                DocumentReference ownerRef = fStore.collection("Users").document(mOwner_ID).collection("UpcomingMeetings").document();
                 Map<String, Object> meeting = new HashMap<>();
                 meeting.put("date", date);
                 meeting.put("time", time);
                 meeting.put("address", mAddress);
                 meeting.put("city", mCity);
                 meeting.put("name", name);
+
+                ownerRef.set(meeting).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("abc", "Success!");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("abc", "Error!");
+                    }
+                });
 
                 documentReference.set(meeting).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -45,7 +46,7 @@ public class RecyclerView_Config {
 
         //Rating layout
         private TextView totalRate_header;
-        private TextView totalNum;
+        private TextView totalRatingNumber;
         private RatingBar totalRatingBar;
 
         private String mReligious_Council;
@@ -58,6 +59,7 @@ public class RecyclerView_Config {
         private String mAccessibility;
         private String mSchedule_Appointment;
         private String mNotes;
+        private String totalRate;
 
         private String key;
 
@@ -69,15 +71,9 @@ public class RecyclerView_Config {
             mNeighbor = (TextView) itemView.findViewById(R.id.neighbor_txtView);
 
             totalRate_header = (TextView)itemView.findViewById(R.id.total_rate);
-            totalNum = (TextView)itemView.findViewById(R.id.total_sum);
+            totalRatingNumber = (TextView)itemView.findViewById(R.id.total_rate_number);
             totalRatingBar = (RatingBar)itemView.findViewById(R.id.ratingBar);
 
-            totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                    totalNum.setText(Float.toString(v));
-                }
-            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,7 +87,6 @@ public class RecyclerView_Config {
                             if(task.isSuccessful()) {
                                 DocumentSnapshot document = task.getResult();
                                 if(document.exists()) {
-                                    Log.d("Youhou",document.getData().toString());
                                     if(document.get("profile").toString().equals("User")) {
                                         Log.d("Type", "User");
                                         Intent intent = new Intent(mContext, MikvehProfileActivity.class);
@@ -99,6 +94,7 @@ public class RecyclerView_Config {
                                         intent.putExtra("address", mAddress.getText().toString());
                                         intent.putExtra("city", mCity.getText().toString());
                                         intent.putExtra("neighbor", mNeighbor.getText().toString());
+                                        //intent.putExtra("totalRate", totalRatingNumber.getText().toString());
 
                                         intent.putExtra("religious_Council", mReligious_Council);
                                         intent.putExtra("opening_Hours_Summer", mOpening_Hours_Summer);
@@ -120,6 +116,7 @@ public class RecyclerView_Config {
                                         intent.putExtra("address", mAddress.getText().toString());
                                         intent.putExtra("city", mCity.getText().toString());
                                         intent.putExtra("neighbor", mNeighbor.getText().toString());
+                                        //intent.putExtra("totalRate", totalRatingNumber.getText().toString());
 
                                         intent.putExtra("religious_Council", mReligious_Council);
                                         intent.putExtra("opening_Hours_Summer", mOpening_Hours_Summer);
@@ -149,16 +146,31 @@ public class RecyclerView_Config {
             });
         }
 
-        public void rateSubmit(View view) {
-            String ratingValue = String.valueOf(totalRatingBar.getRating()); //"5.0"
-            totalNum.setText(ratingValue);
-            //Toast.makeText(RecyclerView_Config.this, "Rate: " + ratingValue, Toast.LENGTH_LONG).show();
-        }
 
         public void bind(Mikveh mikveh, String key) {
             mAddress.setText(mikveh.getMikve_Address());
             mCity.setText(mikveh.getCity());
             mNeighbor.setText(mikveh.getNeighborhood());
+
+            //Display the current mikveh totalRate
+            totalRate = mikveh.getTotalRate();
+            float f = Float.parseFloat(totalRate);
+            totalRatingNumber.setText(totalRate);
+            totalRatingBar.setRating(f);
+
+
+
+            //When user click on the stars for rating
+            totalRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                    mikveh.setTotalRate(String.valueOf(v));
+                    totalRate = mikveh.getTotalRate();
+                    totalRatingNumber.setText(totalRate);
+                    totalRatingBar.setRating(v);
+                }
+            });
+
             this.key = key;
 
             this.mReligious_Council = mikveh.getReligious_Council();
