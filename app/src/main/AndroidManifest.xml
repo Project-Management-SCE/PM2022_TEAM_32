@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
         <activity
+            android:name=".ContactWithUs"
+            android:exported="false" />
+        <activity
+            android:name=".OwnerMeetings"
+            android:exported="false" />
+        <activity
             android:name=".MikvehDetailsActivity"
             android:exported="false" />
         <activity

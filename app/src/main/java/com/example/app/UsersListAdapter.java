@@ -36,16 +36,11 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // below line is use to inflate the
-        // layout for our item of list view.
         View listitemView = convertView;
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.users_list_item, parent, false);
         }
 
-        // after inflating an item of listview item
-        // we are getting data from array list inside
-        // our modal class.
         UsersDataModel dataModal = getItem(position);
 
         // initializing our UI components of list view item.
@@ -54,9 +49,7 @@ public class UsersListAdapter extends ArrayAdapter<UsersDataModel> {
         TextView email = listitemView.findViewById(R.id.email_txt);
         ImageButton delete = listitemView.findViewById(R.id.imageView);
 
-        // after initializing our items we are
-        // setting data to our view.
-        // below line is use to set data to our text view.
+
         userName.setText(dataModal.getUsername());
         profile.setText(dataModal.getProfile());
         email.setText(dataModal.getEmail());

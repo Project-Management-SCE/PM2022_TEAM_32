@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +40,8 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
     EditText userNameEditText, emailEditText, passwordEditText;
     TextView signInButton;
     ProgressBar progressBar;
-    CheckBox checkBox1, checkbox2;
+    RadioGroup profileGroup;
+    RadioButton userRadioButton, ownerRadioButton;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID, profile;
@@ -52,6 +55,9 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
         creatButn = findViewById(R.id.create_acct_button);
         userNameEditText = findViewById(R.id.username_account);
         emailEditText = findViewById(R.id.email_account);
+        profileGroup = findViewById(R.id.profileRadioGroup);
+        ownerRadioButton = findViewById(R.id.ownerButton);
+        userRadioButton = findViewById(R.id.userButton);
         passwordEditText = findViewById(R.id.password_account);
         signInButton = findViewById(R.id.sign_in_option);
 
@@ -74,8 +80,6 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                 final String username = userNameEditText.getText().toString().trim();
                 final String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
-                boolean ownerChecked = ((CheckBox) findViewById(R.id.checkBox1)).isChecked();
-                boolean userChecked = ((CheckBox) findViewById(R.id.checkBox2)).isChecked();
 
                 if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
@@ -105,15 +109,6 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                                 Map<String, Object> user = new HashMap<>();
                                 user.put("userName", username);
                                 user.put("email", email);
-                                if(userChecked){
-                                    profile = "User";
-                                }
-                                else if(ownerChecked){
-                                    profile = "Mikveh owner";
-                                }
-                                else{
-                                    profile = "Admin";
-                                }
                                 user.put("profile", profile);
 
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -141,5 +136,22 @@ public class SignUpActivity<CreateAccountActivity> extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.ownerButton:
+                if (checked)
+                    profile = "Owner";
+                    break;
+            case R.id.userButton:
+                if (checked)
+                    profile = "User";
+                    break;
+        }
     }
 }

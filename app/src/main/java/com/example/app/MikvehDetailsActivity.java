@@ -2,16 +2,18 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MikvehDetailsActivity extends AppCompatActivity {
+    private ImageButton imageCalendar;
     private EditText mCouncil_editTxt;
     private EditText mCity_editTxt;
     private EditText mNeighborhood_editTxt;
@@ -79,7 +81,7 @@ public class MikvehDetailsActivity extends AppCompatActivity {
         mUpdate_btn = (Button) findViewById(R.id.update_btn);
         mDelete_btn = (Button) findViewById(R.id.delete_btn);
         mBack_btn = (Button) findViewById(R.id.back_btn);
-
+        imageCalendar = findViewById(R.id.calendarImage);
         mCouncil_editTxt.setText(mReligious_Council);
         mCity_editTxt.setText(mCity);
         mNeighborhood_editTxt.setText(mNeighbor);
@@ -92,6 +94,14 @@ public class MikvehDetailsActivity extends AppCompatActivity {
         mAccess_editTxt.setText(mAccessibility);
         mAppoint_editTxt.setText(mSchedule_Appointment);
         mNotes_editTxt.setText(mNotes);
+
+        imageCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MikvehDetailsActivity.this, OwnerMeetings.class));
+
+            }
+        });
 
         mUpdate_btn.setOnClickListener(new View.OnClickListener() {
             @Override

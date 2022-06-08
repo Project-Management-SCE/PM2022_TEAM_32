@@ -35,14 +35,12 @@ public class SignInActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
-//    String userID, profile;
 
 
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
         FirebaseApp.initializeApp(SignInActivity.this);
-
         setContentView(R.layout.activity_sign_in);
 
         LoginButn = findViewById(R.id.email_sign_in_button);
@@ -63,9 +61,6 @@ public class SignInActivity extends AppCompatActivity {
                 String email = eMail.getText().toString().trim();
                 String password = Password.getText().toString().trim();
 
-//                String email = "adam370@hotmail.fr";
-//                String password = "secret";
-
                 if (TextUtils.isEmpty(email)) {
                     eMail.setError("Email is Required.");
                     return;
@@ -83,6 +78,7 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            user = fAuth.getCurrentUser();
                             DocumentReference docRef = fStore.collection("Users").document(user.getUid());
                             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override

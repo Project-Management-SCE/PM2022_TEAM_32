@@ -29,7 +29,7 @@
             android:layout_height="52dp"
             android:layout_gravity="center"
             android:layout_marginTop="250dp"
-            android:fontFamily="@font/aleo_bold"
+            android:fontFamily="@font/roboto_slab_bold"
             android:text="@string/welcome"
             android:textAlignment="center"
             android:textColor="#D69EA6"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textAlignment="center"
-            android:fontFamily="@font/aleo_bold"
+            android:fontFamily="@font/roboto_slab_bold"
             android:textColor="#D69EA6"
             android:textSize="28sp" />
 
